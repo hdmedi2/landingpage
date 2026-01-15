@@ -23,6 +23,7 @@ export const theme = {
     shadowCard: 'rgba(148,148,148,0.25)',
     shadowCardLight: 'rgba(195,195,195,0.25)',
     shadowCardLighter: 'rgba(186,186,186,0.25)',
+    blueLight: '#EDF5FF',
   },
   fonts: {
     primary: "'Noto Sans KR', system-ui, -apple-system, sans-serif",

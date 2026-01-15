@@ -29,11 +29,12 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.textGray};
   text-align: center;
   line-height: 1.6;
+  margin-top: -30px;
 `;
 
 const CardsWrapper = styled.div`
@@ -56,22 +57,22 @@ const ProblemSection = () => {
     {
       icon: '📄',
       title: '서류 준비의 늪',
-      description: '누락 시 즉시 반려, 다시 처음부터 시작해야 하는 서류 지옥',
+      description: '누락 시 즉시 반려, 다시 처음부터 \n시작해야 하는 서류 지옥',
     },
     {
       icon: '🔐',
       title: '접속/인증 반복',
-      description: '보안 프로그램 설치와 끝없는 공인인증서 로그인 스트레스',
+      description: '보안 프로그램 설치와 \n끝없는 공인인증서 로그인 스트레스',
     },
     {
       icon: '⌨️',
       title: '데이터 중복 입력',
-      description: '차트에 있는 내용을 공단 사이트에 또 치는 비생산적 노동',
+      description: '차트에 있는 내용을 공단 사이트에 \n또 치는 비생산적 노동',
     },
     {
       icon: '😓',
       title: '처방전 3년 보관 의무',
-      description: '방대한 양의 처방전을 보관하고, 필요할 때 직접 찾아내야 하는 어려움',
+      description: '방대한 양의 처방전을 보관하고, \n필요할 때 직접 찾아내야 하는 어려움',
     },
   ];
 

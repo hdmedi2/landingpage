@@ -27,8 +27,8 @@ const Container = styled.div`
 const ImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 293px;
-  border-radius: 8px;
+  height: 400px;
+  border-radius: 20px;
   overflow: hidden;
 `;
 
@@ -60,7 +60,7 @@ const Quote = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 16px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};
@@ -89,7 +89,7 @@ const CheckIcon = styled.span`
   align-items: center;
   justify-content: center;
   color: ${props => props.theme.colors.primary};
-  font-size: 14px;
+  font-size: 30px;
 `;
 
 const ForPharmacistsSection = () => {

@@ -3,7 +3,7 @@ import StatCard from './StatCard';
 
 const Section = styled.section`
   width: 100%;
-  background-color: ${props => props.theme.colors.background};
+  background-color: #F9FAFB;
   padding: 120px 0;
 `;
 
@@ -29,12 +29,12 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.textGray};
   text-align: center;
   line-height: 1.6;
-  margin-top: -10px;
+  margin-top: -30px;
 `;
 
 const StatsWrapper = styled.div`
@@ -42,6 +42,10 @@ const StatsWrapper = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   margin-top: 50px;
+  width: 82%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);

@@ -57,13 +57,13 @@ const SolutionSection = () => {
       description: '기존 내부 시스템을 건드리지 않습니다.',
     },
     {
-      title: '효율적',
-      description: '가장 비효율적인 구간만 제거합니다.',
+      title: '편리함',
+      description: '공단에 직접 접속하거나 \n중복 타이핑이 불필요합니다.',
     },
     {
-      title: '편리함',
-      description: '공단에 직접 접속하거나 중복 타이핑이 불필요합니다.',
-    },
+      title: '효율적',
+      description: '가장 비효율적인 구간만 제거합니다.',
+    }
   ];
 
   return (

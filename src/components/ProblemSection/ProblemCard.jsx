@@ -21,23 +21,24 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 30px;
   flex-shrink: 0;
 `;
 
 const Title = styled.h3`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;
 `;
 
 const Description = styled.p`
-  font-size: 13px;
+  font-size: 15px;
   font-weight: ${props => props.theme.fontWeights.semiBold};
   color: ${props => props.theme.colors.textGray};
   line-height: 1.7;
   margin: 0;
+  white-space: pre-line;
 `;
 
 const ProblemCard = ({ icon, title, description }) => {

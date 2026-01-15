@@ -8,7 +8,8 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  width: 100%;
   text-align: center;
 `;
 

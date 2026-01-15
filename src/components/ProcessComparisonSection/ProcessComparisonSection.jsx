@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   width: 100%;
-  background-color: ${props => props.theme.colors.backgroundGray};
+  background-color: #FFFFF;
   padding: 120px 0;
 `;
 
@@ -28,12 +28,12 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.textGray};
   text-align: center;
   line-height: 1.6;
-  margin-top: -10px;
+  margin-top: -40px;
 `;
 
 const ComparisonWrapper = styled.div`
@@ -41,44 +41,128 @@ const ComparisonWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin-top: 50px;
+  width: 75%;
+  height: 400px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
   }
 `;
 
-const ProcessCard = styled.div`
-  background-color: ${props => props.isPrimary ? props.theme.colors.primary : props.theme.colors.backgroundGray};
-  border: ${props => props.isPrimary ? 'none' : `1px solid ${props.theme.colors.borderGray}`};
+// 기존 방식(5단계) 카드 스타일
+const OldProcessCard = styled.div`
+  background-color: ${props => props.theme.colors.backgroundGray};
+  border: 1px solid ${props => props.theme.colors.borderGray};
   border-radius: 21px;
   padding: 40px 36px;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  box-shadow: ${props => props.isPrimary 
-    ? `0px 7px 10px 0px ${props.theme.colors.shadowCardLight}` 
-    : `0px 7px 10px 0px ${props.theme.colors.shadowCardLight}`
-  };
+  box-shadow: 0px 7px 10px 0px ${props => props.theme.colors.shadowCardLight};
 `;
 
+const OldCardIndicator = styled.div`
+  width: 5px;
+  height: 28px;
+  background-color: ${props => props.theme.colors.borderLight};
+  border-radius: 2px;
+`;
+
+const OldCardTitle = styled.h3`
+  font-size: 18px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  color: ${props => props.theme.colors.textGray};
+  margin: 0;
+`;
+
+const OldStepNumber = styled.div`
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  background-color: ${props => props.theme.colors.borderLight};
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  color: ${props => props.theme.colors.white};
+  flex-shrink: 0;
+  margin-top: 2px;
+`;
+
+const OldStepTitle = styled.div`
+  font-size: 14px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  color: ${props => props.theme.colors.textGray};
+  line-height: 1.5;
+`;
+
+// 아이당뇨 방식(3단계) 카드 스타일
+const NewProcessCard = styled.div`
+  background-color: ${props => props.theme.colors.primary};
+  border: none;
+  border-radius: 21px;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-shadow: 0px 7px 10px 0px ${props => props.theme.colors.shadowCardLight};
+`;
+
+const NewCardIndicator = styled.div`
+  width: 5px;
+  height: 28px;
+  background-color: ${props => props.theme.colors.white};
+  border-radius: 2px;
+`;
+
+const NewCardTitle = styled.h3`
+  font-size: 18px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  color: ${props => props.theme.colors.white};
+  margin: 0;
+`;
+
+const NewStepNumber = styled.div`
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background-color: ${props => props.theme.colors.primaryLight};
+  border: 0.3px solid ${props => props.theme.colors.primaryLighter};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  color: ${props => props.theme.colors.white};
+  flex-shrink: 0;
+  margin-top: 2px;
+`;
+
+const NewStepTitle = styled.div`
+  font-size: 18px;
+  font-weight: ${props => props.theme.fontWeights.black};
+  color: ${props => props.theme.colors.white};
+  line-height: 1.5;
+`;
+
+const NewStepDescription = styled.div`
+  font-size: 12px;
+  font-weight: ${props => props.theme.fontWeights.regular};
+  color: ${props => props.theme.colors.white};
+  line-height: 1.5;
+  opacity: 1;
+`;
+
+// 공통 스타일
 const CardHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-`;
-
-const CardIndicator = styled.div`
-  width: 5px;
-  height: 28px;
-  background-color: ${props => props.isPrimary ? props.theme.colors.white : props.theme.colors.borderLight};
-  border-radius: 2px;
-`;
-
-const CardTitle = styled.h3`
-  font-size: 18px;
-  font-weight: ${props => props.theme.fontWeights.extraBold};
-  color: ${props => props.isPrimary ? props.theme.colors.white : props.theme.colors.textGray};
-  margin: 0;
 `;
 
 const StepsList = styled.ul`
@@ -95,28 +179,6 @@ const StepItem = styled.li`
   gap: 16px;
 `;
 
-const StepNumber = styled.div`
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: ${props => props.isPrimary 
-    ? props.theme.colors.primaryLight 
-    : props.theme.colors.borderLight
-  };
-  border: ${props => props.isPrimary 
-    ? `0.3px solid ${props.theme.colors.primaryLighter}` 
-    : 'none'
-  };
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: ${props => props.theme.fontWeights.extraBold};
-  color: ${props => props.isPrimary ? props.theme.colors.white : props.theme.colors.text};
-  flex-shrink: 0;
-  margin-top: 2px;
-`;
-
 const StepContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -124,26 +186,12 @@ const StepContent = styled.div`
   flex: 1;
 `;
 
-const StepTitle = styled.div`
-  font-size: ${props => props.isPrimary ? '18px' : '15px'};
-  font-weight: ${props => props.isPrimary 
-    ? props.theme.fontWeights.black 
-    : props.theme.fontWeights.extraBold
-  };
-  color: ${props => props.isPrimary ? props.theme.colors.white : props.theme.colors.textGray};
-  line-height: 1.5;
-`;
-
-const StepDescription = styled.div`
-  font-size: 14px;
-  font-weight: ${props => props.theme.fontWeights.regular};
-  color: ${props => props.isPrimary ? props.theme.colors.white : 'transparent'};
-  line-height: 1.5;
-  opacity: ${props => props.isPrimary ? 1 : 0};
-`;
-
 const ProcessComparisonSection = () => {
-  const oldProcess = [
+  // 기존 방식(5단계) 카드 제목
+  const oldProcessCardTitle = '기존 방식 (5단계)';
+
+  // 기존 방식(5단계) 단계 데이터
+  const oldProcessSteps = [
     { number: '1', title: '내부 시스템 확인 (EMR)' },
     { number: '2', title: '공단 포털 접속 / 로그인' },
     { number: '3', title: '수기 입력 / 서류 생성 및 업로드' },
@@ -151,7 +199,11 @@ const ProcessComparisonSection = () => {
     { number: '5', title: '재청구 작업' },
   ];
 
-  const newProcess = [
+  // 아이당뇨 방식(3단계) 카드 제목
+  const newProcessCardTitle = '아이당뇨 방식 (3단계)';
+
+  // 아이당뇨 방식(3단계) 단계 데이터
+  const newProcessSteps = [
     { 
       number: '1', 
       title: '처방 데이터 준비',
@@ -180,39 +232,39 @@ const ProcessComparisonSection = () => {
           "약사님은 클릭만 하세요. 나머지는 아이당뇨가 완벽히 처리합니다."
         </Subtitle>
         <ComparisonWrapper>
-          <ProcessCard>
+          <OldProcessCard>
             <CardHeader>
-              <CardIndicator />
-              <CardTitle>기존 방식 (5단계)</CardTitle>
+              <OldCardIndicator />
+              <OldCardTitle>{oldProcessCardTitle}</OldCardTitle>
             </CardHeader>
             <StepsList>
-              {oldProcess.map((step, index) => (
+              {oldProcessSteps.map((step, index) => (
                 <StepItem key={index}>
-                  <StepNumber>{step.number}</StepNumber>
+                  <OldStepNumber>{step.number}</OldStepNumber>
                   <StepContent>
-                    <StepTitle>{step.title}</StepTitle>
+                    <OldStepTitle>{step.title}</OldStepTitle>
                   </StepContent>
                 </StepItem>
               ))}
             </StepsList>
-          </ProcessCard>
-          <ProcessCard isPrimary>
+          </OldProcessCard>
+          <NewProcessCard>
             <CardHeader>
-              <CardIndicator isPrimary />
-              <CardTitle isPrimary>아이당뇨 방식 (3단계)</CardTitle>
+              <NewCardIndicator />
+              <NewCardTitle>{newProcessCardTitle}</NewCardTitle>
             </CardHeader>
             <StepsList>
-              {newProcess.map((step, index) => (
+              {newProcessSteps.map((step, index) => (
                 <StepItem key={index}>
-                  <StepNumber isPrimary>{step.number}</StepNumber>
+                  <NewStepNumber>{step.number}</NewStepNumber>
                   <StepContent>
-                    <StepTitle isPrimary>{step.title}</StepTitle>
-                    <StepDescription isPrimary>{step.description}</StepDescription>
+                    <NewStepTitle>{step.title}</NewStepTitle>
+                    <NewStepDescription>{step.description}</NewStepDescription>
                   </StepContent>
                 </StepItem>
               ))}
             </StepsList>
-          </ProcessCard>
+          </NewProcessCard>
         </ComparisonWrapper>
       </Container>
     </Section>
