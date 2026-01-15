@@ -19,7 +19,7 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 40px;
   flex-shrink: 0;
   color: ${props => props.theme.colors.primary};
 `;

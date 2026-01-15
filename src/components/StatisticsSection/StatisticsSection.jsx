@@ -4,7 +4,7 @@ import StatCard from './StatCard';
 const Section = styled.section`
   width: 100%;
   background-color: #F9FAFB;
-  padding: 120px 0;
+  padding: 120px 0 50px 0;
 `;
 
 const Container = styled.div`
