@@ -4,7 +4,7 @@ import { useState } from 'react';
 const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.background};
-  padding: 120px 0;
+  padding: 70px 0 120px 0;
 `;
 
 const Container = styled.div`
@@ -35,33 +35,35 @@ const Subtitle = styled.p`
   line-height: 26px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+  margin-top: -20px;
 `;
 
 const FormWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 15px;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 `;
 
 const Input = styled.input`
   flex: 1;
   height: 56px;
   padding: 0 28px;
-  border: 1.3px solid ${props => props.theme.colors.borderGray};
-  border-radius: 8px 0 0 8px;
+  border: 1px solid #E0E0E0;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.text};
   background-color: ${props => props.theme.colors.white};
 
   &::placeholder {
-    color: ${props => props.theme.colors.textGray};
+    color: #808080;
   }
 
   &:focus {
     border-color: ${props => props.theme.colors.primary};
+    outline: none;
   }
 `;
 
@@ -71,11 +73,12 @@ const SubmitButton = styled.button`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   border: none;
-  border-radius: 0 8px 8px 0;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.medium};
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryLight};
@@ -83,19 +86,24 @@ const SubmitButton = styled.button`
 `;
 
 const HelperText = styled.p`
-  font-size: 12px;
-  font-weight: ${props => props.theme.fontWeights.semiBold};
+  font-size: 14px;
+  font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.primary};
-  text-align: center;
-  margin: 0;
+  text-align: left;
+  margin: 8px 0 0 0;
+  width: 100%;
+  max-width: 700px;
 `;
 
 const PrivacyText = styled.p`
-  font-size: 13px;
+  font-size: 11px;
   font-weight: ${props => props.theme.fontWeights.regular};
-  color: ${props => props.theme.colors.textGray};
+  color: #808080;
   text-align: center;
-  margin: 0;
+  margin: 25px 0 0 0;
+  width: 100%;
+  max-width: 700px;
+  padding-left: 8px;
 `;
 
 const ContactFormSection = () => {
@@ -115,7 +123,7 @@ const ContactFormSection = () => {
           휴대전화번호를 남겨주시면,<br />
           담당자가 확인 후 직접 연락드리겠습니다.
         </Subtitle>
-        <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
+        <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
           <FormWrapper>
             <Input
               type="tel"

@@ -61,7 +61,7 @@ const OldProcessCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
-  box-shadow: 0px 7px 10px 0px ${props => props.theme.colors.shadowCardLight};
+  box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
 `;
 
 const OldCardIndicator = styled.div`
@@ -110,7 +110,7 @@ const NewProcessCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 28px;
-  box-shadow: 0px 7px 10px 0px ${props => props.theme.colors.shadowCardLight};
+  box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
 `;
 
 const NewCardIndicator = styled.div`

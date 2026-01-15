@@ -4,7 +4,7 @@ import RecommendationItem from './RecommendationItem';
 const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.background};
-  padding: 120px 0;
+  padding: 120px 0 70px 0;
 `;
 
 const Container = styled.div`
@@ -32,7 +32,11 @@ const ItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 30px;
+  margin-top: -5px;
+  width: 60%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const RecommendationSection = () => {

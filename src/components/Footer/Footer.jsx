@@ -1,4 +1,8 @@
 import styled from 'styled-components';
+import logo from '../../assets/images/logo.svg';
+import blogIcon from '../../assets/images/blog.png';
+import instagramIcon from '../../assets/images/instagram.png';
+import youtubeIcon from '../../assets/images/youtube.png';
 
 const FooterContainer = styled.footer`
   width: 100%;
@@ -27,11 +31,11 @@ const LeftSection = styled.div`
   gap: 20px;
 `;
 
-const Logo = styled.div`
-  font-size: 16px;
-  font-weight: ${props => props.theme.fontWeights.bold};
-  color: ${props => props.theme.colors.white};
+const Logo = styled.img`
+  height: 26px;
+  width: auto;
   margin-bottom: 10px;
+  align-self: flex-start;
 `;
 
 const CompanyInfo = styled.div`
@@ -122,7 +126,7 @@ const Footer = () => {
     <FooterContainer>
       <Container>
         <LeftSection>
-          <Logo>HD MEDI C&C</Logo>
+          <Logo src={logo} alt="HD MEDI C&C" />
           <CompanyInfo>
             회사명 : 주식회사 에이치디메디 | 대표 : 이정의 | 사업자등록번호 : 587-87-02355<br />
             주소 : 본사 - 광주광역시 동구 금남로 193-22, 광주AI창업캠프 303호<br />
@@ -144,14 +148,14 @@ const Footer = () => {
             점심시간 : 12:00 ~ 13:00
           </BusinessHours>
           <SocialIcons>
-            <IconLink href="#" aria-label="Facebook">
-              <img src="http://localhost:3845/assets/82cbc1f22ccce096adb24a411af6758e5e545667.svg" alt="Facebook" />
+            <IconLink href="#" aria-label="Blog">
+              <img src={blogIcon} alt="Blog" />
             </IconLink>
             <IconLink href="#" aria-label="Instagram">
-              <img src="http://localhost:3845/assets/537c74fa14162a90545b729c336e009e1c9380bb.svg" alt="Instagram" />
+              <img src={instagramIcon} alt="Instagram" />
             </IconLink>
             <IconLink href="#" aria-label="YouTube">
-              <img src="http://localhost:3845/assets/d4bb6e85e9de1f507dc99f2420d2b97e6ca46ee9.svg" alt="YouTube" />
+              <img src={youtubeIcon} alt="YouTube" />
             </IconLink>
           </SocialIcons>
         </RightSection>
