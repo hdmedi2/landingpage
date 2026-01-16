@@ -77,7 +77,7 @@ const ProblemSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="문제 제기">
       <Container>
         <Title>
           "아직도 요양기관정보마당에서<br />

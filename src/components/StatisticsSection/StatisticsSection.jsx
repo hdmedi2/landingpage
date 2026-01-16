@@ -65,7 +65,7 @@ const StatisticsSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="증명과 신뢰-통계">
       <Container>
         <Title>이미 현장에서 수백 명이 증명하고 있습니다.</Title>
         <Subtitle>

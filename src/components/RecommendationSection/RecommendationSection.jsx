@@ -48,7 +48,7 @@ const RecommendationSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="추천 대상">
       <Container>
         <Title>이런 분들께 아이당뇨를 추천합니다.</Title>
         <ItemsWrapper>

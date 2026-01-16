@@ -67,7 +67,7 @@ const SolutionSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="해결 개념">
       <Container>
         <div>
           <Title>아이당뇨는 단순한 청구 프로그램이 아닙니다.</Title>

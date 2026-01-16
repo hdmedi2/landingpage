@@ -54,7 +54,7 @@ const BenefitsSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="증명과 신뢰-혜택">
       <Container>
         <CardsWrapper>
           {benefits.map((benefit, index) => (

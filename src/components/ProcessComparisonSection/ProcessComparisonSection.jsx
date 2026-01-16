@@ -222,7 +222,7 @@ const ProcessComparisonSection = () => {
   ];
 
   return (
-    <Section>
+    <Section id="비포 & 에프터">
       <Container>
         <Title>
           복잡한 5단계를 3단계로,<br />
