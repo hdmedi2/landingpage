@@ -24,6 +24,11 @@ const IconWrapper = styled.div`
   color: ${props => props.theme.colors.primary};
 `;
 
+const CheckIcon = styled.span`
+  display: inline-block;
+  transform: translateY(3px);
+`;
+
 const Text = styled.p`
   font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
@@ -35,7 +40,9 @@ const Text = styled.p`
 const RecommendationItem = ({ text }) => {
   return (
     <Item>
-      <IconWrapper>✓</IconWrapper>
+      <IconWrapper>
+        <CheckIcon>✓</CheckIcon>
+      </IconWrapper>
       <Text>{text}</Text>
     </Item>
   );

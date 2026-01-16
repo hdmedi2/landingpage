@@ -37,13 +37,14 @@ const Subtitle = styled.p`
   text-align: center;
   line-height: 1.6;
   margin-top: 10px;
+  margin-bottom: 55px;
 `;
 
 const FeaturesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 25px;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;

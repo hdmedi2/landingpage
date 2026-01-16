@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import HeroImage from '../../assets/images/Hero.png';
 
 const HeroContainer = styled.section`
   position: relative;
@@ -17,7 +18,7 @@ const BackgroundImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('http://localhost:3845/assets/060263c203ad287f436e9676b6db88e92cd254b8.png');
+  background-image: url(${HeroImage});
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -42,8 +43,9 @@ const ContentWrapper = styled.div`
   padding: 0 120px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   width: 100%;
+  margin-top: -100px;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
@@ -51,9 +53,9 @@ const ContentWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 80px;
+  font-size: 60px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
-  line-height: 110px;
+  line-height: 90px;
   color: ${props => props.theme.colors.white};
   
   .highlight {
@@ -80,7 +82,7 @@ const ButtonWrapper = styled.div`
 const HeroButton = styled.button`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
-  border-radius: 20px;
+  border-radius: 32px;
   padding: 20px 48px;
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.extraBold};

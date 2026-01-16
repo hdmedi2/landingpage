@@ -41,7 +41,7 @@ const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  margin-top: 50px;
+  margin-top: 20px;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);

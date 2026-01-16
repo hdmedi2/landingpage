@@ -34,6 +34,7 @@ const Subtitle = styled.p`
   text-align: center;
   line-height: 1.6;
   margin-top: -40px;
+  margin-bottom: -40px;
 `;
 
 const ComparisonWrapper = styled.div`

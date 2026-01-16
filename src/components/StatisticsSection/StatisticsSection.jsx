@@ -34,7 +34,8 @@ const Subtitle = styled.p`
   color: ${props => props.theme.colors.textGray};
   text-align: center;
   line-height: 1.6;
-  margin-top: -30px;
+  margin-top: -40px;
+  margin-bottom: -40px;
 `;
 
 const StatsWrapper = styled.div`
