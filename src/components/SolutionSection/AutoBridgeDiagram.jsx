@@ -134,7 +134,7 @@ const StatusBadge = styled.div`
   margin-top: 12px;
   min-width: 120px;
   white-space: nowrap;
-  ${props => props.success 
+  ${props => props.$success 
     ? `background-color: ${props.theme.colors.successBorder}; border: 1.5px solid ${props.theme.colors.success}; color: ${props.theme.colors.success};`
     : `background-color: ${props.theme.colors.backgroundGrayLight}; border: 1.5px solid ${props.theme.colors.borderGray}; color: ${props.theme.colors.text};`
   }
@@ -168,7 +168,7 @@ const AutoBridgeDiagram = () => {
             <NodeTitle>국민건강보험</NodeTitle>
             <NodeSubtitle>(요양기관정보마당)</NodeSubtitle>
           </NodeLabel>
-          <StatusBadge success>접수 완료</StatusBadge>
+          <StatusBadge $success>접수 완료</StatusBadge>
         </Node>
       </FlowWrapper>
     </DiagramContainer>

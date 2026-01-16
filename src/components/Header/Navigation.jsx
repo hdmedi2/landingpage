@@ -40,7 +40,7 @@ const DropdownContainer = styled.div`
 `;
 
 const ArrowIcon = styled.img`
-  display: ${props => props.isOpen ? 'inline-block' : 'none'};
+  display: ${props => props.$isOpen ? 'inline-block' : 'none'};
   width: auto;
   height: 8px;
   margin-left: 4px;
@@ -58,9 +58,9 @@ const DropdownMenu = styled.div`
   box-shadow: 0 4px 12px ${props => props.theme.colors.shadow};
   min-width: 180px;
   padding: 8px 0;
-  opacity: ${props => props.isOpen ? 1 : 0};
-  visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
-  transform: translateX(-50%) translateY(${props => props.isOpen ? '0' : '-10px'});
+  opacity: ${props => props.$isOpen ? 1 : 0};
+  visibility: ${props => props.$isOpen ? 'visible' : 'hidden'};
+  transform: translateX(-50%) translateY(${props => props.$isOpen ? '0' : '-10px'});
   transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
   z-index: 1000;
 `;
@@ -172,9 +172,9 @@ const Navigation = () => {
       <DropdownContainer ref={dropdownRef}>
         <NavItem onClick={toggleDropdown}>
           Solution
-          {isDropdownOpen && <ArrowIcon src={navArrow} alt="arrow" isOpen={isDropdownOpen} />}
+          {isDropdownOpen && <ArrowIcon src={navArrow} alt="arrow" $isOpen={isDropdownOpen} />}
         </NavItem>
-        <DropdownMenu isOpen={isDropdownOpen}>
+        <DropdownMenu $isOpen={isDropdownOpen}>
           {solutionMenuItems.map((item, index) => (
             <DropdownItem 
               key={index} 
