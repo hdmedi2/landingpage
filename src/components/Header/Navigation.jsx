@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const NavContainer = styled.nav`
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
