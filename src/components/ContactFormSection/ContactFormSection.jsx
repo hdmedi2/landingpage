@@ -120,21 +120,21 @@ const ContactFormSection = () => {
       <Container>
         <Title>도입을 고민 중이신가요?</Title>
         <Subtitle>
-          휴대전화번호를 남겨주시면,<br />
+          기관 전화번호를 남겨주시면,<br />
           담당자가 확인 후 직접 연락드리겠습니다.
         </Subtitle>
         <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
           <FormWrapper>
             <Input
               type="tel"
-              placeholder="휴대전화번호를 입력해주세요."
+              placeholder="기관 전화번호를 입력해주세요."
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             <SubmitButton type="submit">전송</SubmitButton>
           </FormWrapper>
           <HelperText>
-            * 하이픈(-)을 포함하여 입력해주세요. (예 : 010-1234-5678)
+            * 하이픈(-)을 포함하여 입력해주세요. (예 : 02-123-4567)
           </HelperText>
           <PrivacyText>
             *입력하신 정보는 아이당뇨 도입 안내 목적으로만 활용됩니다.
