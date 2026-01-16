@@ -29,7 +29,7 @@ const Header = () => {
     <HeaderContainer>
       <Logo />
       <Navigation />
-      <CTAButton text="아이당뇨 이동하기" />
+      <CTAButton text="아이당뇨 이동하기" href="https://pharm.hdmedi.kr/" />
     </HeaderContainer>
   );
 };

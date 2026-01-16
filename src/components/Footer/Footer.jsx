@@ -74,11 +74,17 @@ const Links = styled.div`
 `;
 
 const Link = styled.a`
+  color: ${props => props.theme.colors.white};
+  text-decoration: none;
   cursor: pointer;
   transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  &:visited {
+    color: ${props => props.theme.colors.white};
   }
 `;
 
@@ -139,22 +145,22 @@ const Footer = () => {
         </LeftSection>
         <RightSection>
           <Links>
-            <Link>개인정보처리방침</Link>
-            <Link>서비스이용약관</Link>
-            <Link>찾아오시는 길</Link>
+            <Link href="https://hdmedi.co.kr/ko/privacy-policy" target="_blank" rel="noopener noreferrer">개인정보처리방침</Link>
+            <Link href="https://hdmedi.co.kr/ko/terms-of-service" target="_blank" rel="noopener noreferrer">서비스이용약관</Link>
+            <Link href="https://hdmedi.co.kr/ko/contact-us" target="_blank" rel="noopener noreferrer">찾아오시는 길</Link>
           </Links>
           <BusinessHours>
             영업시간 : 09:00 ~ 18:00<br />
             점심시간 : 12:00 ~ 13:00
           </BusinessHours>
           <SocialIcons>
-            <IconLink href="#" aria-label="Blog">
+            <IconLink href="https://blog.naver.com/iyac_official" target="_blank" rel="noopener noreferrer" aria-label="Blog">
               <img src={blogIcon} alt="Blog" />
             </IconLink>
-            <IconLink href="#" aria-label="Instagram">
+            <IconLink href="https://www.instagram.com/iyac_official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src={instagramIcon} alt="Instagram" />
             </IconLink>
-            <IconLink href="#" aria-label="YouTube">
+            <IconLink href="https://www.youtube.com/channel/UCnxbRj24GqAEoFekMTXD_AA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <img src={youtubeIcon} alt="YouTube" />
             </IconLink>
           </SocialIcons>

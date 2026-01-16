@@ -116,7 +116,9 @@ const HeroSection = () => {
           매달 반복되는 서류 작업과 행정 절차, 이제 클릭 한 번으로 자동화하세요.
         </Subtitle>
         <ButtonWrapper>
-          <HeroButton>아이당뇨 웹사이트로 이동하기</HeroButton>
+          <HeroButton onClick={() => window.open('https://pharm.hdmedi.kr/', '_blank', 'noopener,noreferrer')}>
+            아이당뇨 웹사이트로 이동하기
+          </HeroButton>
         </ButtonWrapper>
       </ContentWrapper>
     </HeroContainer>

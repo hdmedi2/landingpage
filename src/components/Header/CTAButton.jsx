@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Button = styled.button`
+const Button = styled.a`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
   border: none;
@@ -12,6 +12,8 @@ const Button = styled.button`
   align-items: center;
   gap: 5px;
   transition: background-color 0.2s;
+  text-decoration: none;
+  cursor: pointer;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryLight};
@@ -23,8 +25,8 @@ const Button = styled.button`
   }
 `;
 
-const CTAButton = ({ text }) => {
-  return <Button>{text}</Button>;
+const CTAButton = ({ text, href }) => {
+  return <Button href={href} target="_blank" rel="noopener noreferrer">{text}</Button>;
 };
 
 export default CTAButton;
