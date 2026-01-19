@@ -10,7 +10,7 @@ const Section = styled.section`
 const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -23,11 +23,11 @@ const Container = styled.div`
 const CardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  width: 97%;
-  max-width: 1200px;
+  gap: 25px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  align-items: stretch;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;

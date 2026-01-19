@@ -4,16 +4,20 @@ const Card = styled.div`
   background-color: ${props => props.theme.colors.white};
   border: 1px solid ${props => props.theme.colors.borderLight};
   border-radius: 35px;
-  padding: 36px 32px;
+  padding: 36px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 16px;
   flex: 1;
+  height: 100%;
+  min-height: 280px;
+  min-width: 0;
 `;
 
 const Number = styled.div`
-  font-size: 22px;
+  font-size: 26px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.primary};
   margin-bottom: 8px;
@@ -21,21 +25,23 @@ const Number = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;
   text-align: center;
+  width: 100%;
 `;
 
 const Description = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.textGrayDark};
   line-height: 1.7;
   margin: 0;
   text-align: center;
   white-space: pre-line;
+  width: 100%;
 `;
 
 const BenefitCard = ({ number, title, description }) => {

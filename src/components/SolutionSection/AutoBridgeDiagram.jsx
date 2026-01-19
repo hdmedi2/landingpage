@@ -46,14 +46,14 @@ const NodeLabel = styled.div`
 `;
 
 const NodeTitle = styled.span`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   text-align: center;
 `;
 
 const NodeSubtitle = styled.span`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   text-align: center;
@@ -83,7 +83,7 @@ const CenterBadge = styled.div`
   background-color: ${props => props.theme.colors.blueLight};
   border-radius: 20px;
   padding: 8px 30px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.primary};
   white-space: nowrap;
@@ -108,14 +108,14 @@ const ProgressBar = styled.div`
 `;
 
 const CenterTitle = styled.div`
-  font-size: 32px;
+  font-size: 36px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.primary};
   margin-top: 8px;
 `;
 
 const CenterSubtitle = styled.div`
-  font-size: 12px;
+  font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.primary};
   letter-spacing: 2px;
@@ -129,7 +129,7 @@ const StatusBadge = styled.div`
   justify-content: center;
   padding: 6px 14px;
   border-radius: 20px;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.bold};
   margin-top: 12px;
   min-width: 120px;

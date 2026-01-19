@@ -77,7 +77,7 @@ const FeatureItem = styled.li`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.text};
 `;

@@ -73,7 +73,7 @@ const OldCardIndicator = styled.div`
 `;
 
 const OldCardTitle = styled.h3`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.textGray};
   margin: 0;
@@ -88,7 +88,7 @@ const OldStepNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.white};
   flex-shrink: 0;
@@ -96,7 +96,7 @@ const OldStepNumber = styled.div`
 `;
 
 const OldStepTitle = styled.div`
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.textGray};
   line-height: 1.5;
@@ -122,7 +122,7 @@ const NewCardIndicator = styled.div`
 `;
 
 const NewCardTitle = styled.h3`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.white};
   margin: 0;
@@ -137,7 +137,7 @@ const NewStepNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.white};
   flex-shrink: 0;
@@ -145,14 +145,14 @@ const NewStepNumber = styled.div`
 `;
 
 const NewStepTitle = styled.div`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: ${props => props.theme.fontWeights.black};
   color: ${props => props.theme.colors.white};
   line-height: 1.5;
 `;
 
 const NewStepDescription = styled.div`
-  font-size: 12px;
+  font-size: 16px;
   font-weight: ${props => props.theme.fontWeights.regular};
   color: ${props => props.theme.colors.white};
   line-height: 1.5;

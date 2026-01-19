@@ -26,14 +26,14 @@ const IconWrapper = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: 20px;
+  font-size: 23px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;
 `;
 
 const Description = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.semiBold};
   color: ${props => props.theme.colors.textGray};
   line-height: 1.7;
