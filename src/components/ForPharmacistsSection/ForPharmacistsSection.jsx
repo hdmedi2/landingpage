@@ -53,14 +53,14 @@ const Label = styled.span`
 `;
 
 const Quote = styled.h2`
-  font-size: 38px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 52px;
   color: ${props => props.theme.colors.text};
 `;
 
 const Description = styled.p`
-  font-size: 17px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};
@@ -77,19 +77,19 @@ const FeatureItem = styled.li`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.text};
 `;
 
 const CheckIcon = styled.span`
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${props => props.theme.colors.primary};
-  font-size: 30px;
+  font-size: 40px;
 `;
 
 const ForPharmacistsSection = () => {
@@ -103,9 +103,9 @@ const ForPharmacistsSection = () => {
           />
         </ImageWrapper>
         <ContentWrapper>
-          <Label>FOR PHARMACISTS</Label>
+
           <Quote>
-            "행정은 줄이고,<br />
+            "약국 업무는 줄이고,<br />
             환자와 본업에 집중하세요."
           </Quote>
           <Description>

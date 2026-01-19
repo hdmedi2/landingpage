@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 50px;
   color: ${props => props.theme.colors.text};
@@ -29,7 +29,7 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.textGray};
   text-align: center;
@@ -59,7 +59,7 @@ const StatsWrapper = styled.div`
 
 const StatisticsSection = () => {
   const stats = [
-    { number: '250+', label: '활발한 이용 약국' },
+    { number: '350+', label: '활발한 이용 약국' },
     { number: '80%', label: '처리 시간 단축' },
     { number: '90%', label: '반려 / 오류 감소' },
     { number: '3분', label: '평균 청구 처리' },

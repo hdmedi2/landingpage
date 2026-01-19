@@ -23,7 +23,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 50px;
   color: ${props => props.theme.colors.text};
@@ -31,7 +31,7 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};
@@ -187,7 +187,7 @@ const ContactFormSection = () => {
   };
 
   return (
-    <Section>
+    <Section id="도입을-고민중이신가요">
       <Container>
         <Title>도입을 고민 중이신가요?</Title>
         <Subtitle>

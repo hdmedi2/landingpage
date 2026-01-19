@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 50px;
   color: ${props => props.theme.colors.text};
@@ -29,9 +29,9 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
-  color: ${props => props.theme.colors.textGray};
+  color: ${props => props.theme.colors.text};
   text-align: center;
   line-height: 1.6;
   margin-top: -30px;

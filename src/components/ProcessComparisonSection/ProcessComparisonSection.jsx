@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 50px;
   color: ${props => props.theme.colors.text};
@@ -28,9 +28,9 @@ const Title = styled.h2`
 `;
 
 const Subtitle = styled.p`
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
-  color: ${props => props.theme.colors.textGray};
+  color: ${props => props.theme.colors.black};
   text-align: center;
   line-height: 1.6;
   margin-top: -40px;
@@ -53,7 +53,7 @@ const ComparisonWrapper = styled.div`
   }
 `;
 
-// 기존 방식(5단계) 카드 스타일
+// 기존 방식(8단계) 카드 스타일
 const OldProcessCard = styled.div`
   background-color: ${props => props.theme.colors.backgroundGray};
   border: 1px solid ${props => props.theme.colors.borderGray};
@@ -189,15 +189,18 @@ const StepContent = styled.div`
 
 const ProcessComparisonSection = () => {
   // 기존 방식(5단계) 카드 제목
-  const oldProcessCardTitle = '기존 방식 (5단계)';
+  const oldProcessCardTitle = '기존 방식 (8단계)';
 
   // 기존 방식(5단계) 단계 데이터
   const oldProcessSteps = [
-    { number: '1', title: '내부 시스템 확인 (EMR)' },
-    { number: '2', title: '공단 포털 접속 / 로그인' },
-    { number: '3', title: '수기 입력 / 서류 생성 및 업로드' },
-    { number: '4', title: '오류 확인 및 수정' },
-    { number: '5', title: '재청구 작업' },
+    { number: '1', title: '처방전 접수' },
+    { number: '2', title: '서류 작성(청수서, 위임장, 거래명세서 등)' },
+    { number: '3', title: '공단 포털 접속 / 로그인' },
+    { number: '4', title: '수기 입력 / 서류 업로드' },
+    { number: '5', title: '요양비 지급 확인 / 반려 사유 확인' },
+    { number: '6', title: '요양비 지급 확인 / 반려 사유 확인' },
+    { number: '7', title: '오류 확인 및 수정' },
+    { number: '8', title: '재청구 작업' },
   ];
 
   // 아이당뇨 방식(3단계) 카드 제목
@@ -226,7 +229,7 @@ const ProcessComparisonSection = () => {
     <Section id="비포 & 에프터">
       <Container>
         <Title>
-          복잡한 5단계를 3단계로,<br />
+          복잡한 8단계를 3단계로,<br />
           업무 시간은 80% 이상 단축됩니다.
         </Title>
         <Subtitle>
