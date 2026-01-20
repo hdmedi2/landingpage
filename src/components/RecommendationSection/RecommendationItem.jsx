@@ -19,14 +19,26 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
   flex-shrink: 0;
-  color: ${props => props.theme.colors.primary};
 `;
 
 const CheckIcon = styled.span`
   display: inline-block;
-  transform: translateY(3px);
+  width: 24px;
+  height: 24px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 18px;
+    border: solid ${props => props.theme.colors.primary};
+    border-width: 0 3px 3px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
 `;
 
 const Text = styled.p`
@@ -41,7 +53,7 @@ const RecommendationItem = ({ text }) => {
   return (
     <Item>
       <IconWrapper>
-        <CheckIcon>✓</CheckIcon>
+        <CheckIcon />
       </IconWrapper>
       <Text>{text}</Text>
     </Item>
