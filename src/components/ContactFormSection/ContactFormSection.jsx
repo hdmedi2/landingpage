@@ -157,13 +157,19 @@ const ContactFormSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    console.log('=== 전송하기 버튼 클릭 ===');
+    console.log('입력된 약국명:', pharmacyName);
+    console.log('입력된 전화번호:', phoneNumber);
+    
     // 입력값 검증
     if (!pharmacyName.trim()) {
+      console.log('❌ 검증 실패: 약국명이 비어있습니다.');
       setError('약국명을 입력해주세요.');
       return;
     }
 
     if (!phoneNumber.trim()) {
+      console.log('❌ 검증 실패: 전화번호가 비어있습니다.');
       setError('전화번호를 입력해주세요.');
       return;
     }
@@ -172,16 +178,25 @@ const ContactFormSection = () => {
     const phoneWithoutHyphen = phoneNumber.trim().replace(/-/g, '');
     const phoneRegex = /^[0-9]{9,11}$/; // 9~11자리 숫자
     if (!phoneRegex.test(phoneWithoutHyphen)) {
+      console.log('❌ 검증 실패: 전화번호 형식이 올바르지 않습니다.', phoneWithoutHyphen);
       setError('올바른 전화번호 형식으로 입력해주세요. (예: 02-1234-5678)');
       return;
     }
+
+    console.log('✅ 검증 통과 - API 호출 시작');
+    console.log('전송할 데이터:', {
+      companyName: pharmacyName.trim(),
+      phoneNumber: phoneNumber.trim()
+    });
 
     setIsLoading(true);
     setError('');
     setIsSuccess(false);
 
     try {
+      console.log('📤 API 요청 전송 중...');
       await submitContactForm(pharmacyName.trim(), phoneNumber.trim());
+      console.log('✅ API 요청 성공!');
       setIsSuccess(true);
       setPharmacyName(''); // 성공 시 입력값 초기화
       setPhoneNumber(''); // 성공 시 입력값 초기화
@@ -191,6 +206,13 @@ const ContactFormSection = () => {
         setIsSuccess(false);
       }, 3000);
     } catch (err) {
+      console.error('❌ API 요청 실패:', err);
+      console.error('에러 상세:', {
+        message: err.message,
+        response: err.response?.data,
+        status: err.response?.status,
+        isCorsError: err.isCorsError
+      });
       // 에러 메시지 처리
       if (err.isCorsError) {
         // CORS 에러

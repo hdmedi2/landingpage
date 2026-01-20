@@ -77,7 +77,7 @@ const FeatureItem = styled.li`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.text};
 `;
@@ -89,7 +89,7 @@ const CheckIcon = styled.span`
   align-items: center;
   justify-content: center;
   color: ${props => props.theme.colors.primary};
-  font-size: 40px;
+  font-size: 32px;
 `;
 
 const ForPharmacistsSection = () => {

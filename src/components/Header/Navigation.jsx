@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import navArrow from '../../assets/images/Navarrow.png';
+import navArrowDefault from '../../assets/images/Navarrow_Default.png';
 
 const NavContainer = styled.nav`
   display: flex;
@@ -40,11 +41,13 @@ const DropdownContainer = styled.div`
 `;
 
 const ArrowIcon = styled.img`
-  display: ${props => props.$isOpen ? 'inline-block' : 'none'};
+  display: inline-block;
   width: auto;
   height: 8px;
   margin-left: 4px;
   transition: filter 0.2s;
+  filter: brightness(0) saturate(100%);
+  opacity: 0.8;
 `;
 
 const DropdownMenu = styled.div`
@@ -155,7 +158,12 @@ const Navigation = () => {
       const element = document.getElementById(sectionId);
       if (element) {
         const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (element.offsetHeight / 2);
+        let offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (element.offsetHeight / 2);
+        
+        // '해결 개념' 섹션의 경우 4px 위로 올리기
+        if (sectionId === '해결 개념') {
+          offsetPosition -= 16;
+        }
         
         window.scrollTo({
           top: offsetPosition,
@@ -172,7 +180,11 @@ const Navigation = () => {
       <DropdownContainer ref={dropdownRef}>
         <NavItem onClick={toggleDropdown}>
           Solution
-          {isDropdownOpen && <ArrowIcon src={navArrow} alt="arrow" $isOpen={isDropdownOpen} />}
+          <ArrowIcon 
+            src={isDropdownOpen ? navArrow : navArrowDefault} 
+            alt="arrow" 
+            $isOpen={isDropdownOpen} 
+          />
         </NavItem>
         <DropdownMenu $isOpen={isDropdownOpen}>
           {solutionMenuItems.map((item, index) => (

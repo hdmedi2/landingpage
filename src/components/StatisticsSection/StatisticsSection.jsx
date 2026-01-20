@@ -31,7 +31,7 @@ const Title = styled.h2`
 const Subtitle = styled.p`
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
-  color: ${props => props.theme.colors.textGray};
+  color: ${props => props.theme.colors.black};
   text-align: center;
   line-height: 1.6;
   margin-top: -40px;
@@ -42,7 +42,7 @@ const StatsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 82%;
   max-width: 1100px;
   margin-left: auto;

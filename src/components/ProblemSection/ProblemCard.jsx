@@ -13,8 +13,8 @@ const Card = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background-color: ${props => props.theme.colors.white};
   border: 0.8px solid ${props => props.theme.colors.borderLight};
   border-radius: 8px;
@@ -26,16 +26,16 @@ const IconWrapper = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: 23px;
+  font-size: 24px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;
 `;
 
 const Description = styled.p`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.semiBold};
-  color: ${props => props.theme.colors.textGray};
+  color: ${props => props.theme.colors.black};
   line-height: 1.7;
   margin: 0;
   white-space: pre-line;

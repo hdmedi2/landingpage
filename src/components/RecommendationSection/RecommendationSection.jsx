@@ -21,7 +21,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 36px;
+  font-size: 45px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 50px;
   color: ${props => props.theme.colors.text};
@@ -50,7 +50,7 @@ const RecommendationSection = () => {
   return (
     <Section id="추천 대상">
       <Container>
-        <Title>이런 분들께 아이당뇨를 추천합니다.</Title>
+        <Title>약사님들께 아이당뇨를 추천합니다.</Title>
         <ItemsWrapper>
           {recommendations.map((text, index) => (
             <RecommendationItem key={index} text={text} />

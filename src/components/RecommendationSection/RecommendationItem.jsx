@@ -30,7 +30,7 @@ const CheckIcon = styled.span`
 `;
 
 const Text = styled.p`
-  font-size: 18px;
+  font-size: 21px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;

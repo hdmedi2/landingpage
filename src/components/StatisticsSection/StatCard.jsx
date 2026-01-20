@@ -11,6 +11,7 @@ const Card = styled.div`
   gap: 10px;
   width: 100%;
   text-align: center;
+  margin-bottom: -50px;
 `;
 
 const Number = styled.div`
@@ -21,9 +22,9 @@ const Number = styled.div`
 `;
 
 const Label = styled.div`
-  font-size: 14px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.bold};
-  color: ${props => props.theme.colors.textGray};
+  color: ${props => props.theme.colors.black};
 `;
 
 const StatCard = ({ number, label }) => {

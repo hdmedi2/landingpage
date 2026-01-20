@@ -4,10 +4,10 @@ const Card = styled.div`
   background-color: ${props => props.theme.colors.white};
   border: 2px solid ${props => props.theme.colors.borderLight};
   border-radius: 30px;
-  padding: 50px 40px;
+  padding: 32px 40px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   text-align: center;
   flex: 1;
 `;
@@ -20,7 +20,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  font-size: 17px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.regular};
   color: ${props => props.theme.colors.textGrayLight};
   line-height: 1.7;
