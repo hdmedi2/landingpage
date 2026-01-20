@@ -52,9 +52,9 @@ const Subtitle = styled.p`
   margin-top: -30px;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: ${props => props.theme.fontWeights.medium};
-    color: ${props => props.theme.colors.textGray};
+    color: ${props => props.theme.colors.black};
     line-height: 1.5;
     margin: 0;
   }

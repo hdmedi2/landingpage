@@ -39,10 +39,18 @@ const Title = styled.h2`
   text-align: center;
   margin: 0;
 
+  .mobile-break {
+    display: none;
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1.35;
     font-weight: ${props => props.theme.fontWeights.bold};
+
+    .mobile-break {
+      display: block;
+    }
   }
 `;
 
@@ -55,13 +63,21 @@ const Subtitle = styled.p`
   margin-top: 10px;
   margin-bottom: 55px;
 
+  .mobile-break {
+    display: none;
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: ${props => props.theme.fontWeights.medium};
     color: ${props => props.theme.colors.primary};
     line-height: 1.5;
     margin-top: 12px;
     margin-bottom: 0;
+
+    .mobile-break {
+      display: block;
+    }
   }
 `;
 
@@ -102,11 +118,14 @@ const SolutionSection = () => {
       <Container>
         <div>
           <Title>
-            아이당뇨는 단순한 <br />
+            아이당뇨는 단순한{' '}
+            <span className="mobile-break" />
             청구 프로그램이 아닙니다.
           </Title>
           <Subtitle>
-            수작업 행정 구간만 정확히 제거하는 전문가용 '행정 제거 장치' 입니다.
+            수작업 행정 구간만 정확히 제거하는
+            <span className="mobile-break" />
+            전문가용 '행정 제거 장치' 입니다.
           </Subtitle>
         </div>
         <AutoBridgeDiagram />

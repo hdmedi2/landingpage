@@ -6,6 +6,10 @@ const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.background};
   padding: 70px 0 120px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 50px 0 80px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -20,6 +24,11 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 24px;
+  }
 `;
 
 const Title = styled.h2`
@@ -28,6 +37,12 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    line-height: 1.3;
+    margin: 0;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -37,6 +52,12 @@ const Subtitle = styled.p`
   color: ${props => props.theme.colors.text};
   text-align: center;
   margin-top: -20px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: -10px 0 0 0;
+  }
 `;
 
 const FormWrapper = styled.div`
@@ -45,6 +66,11 @@ const FormWrapper = styled.div`
   gap: 20px;
   width: 100%;
   max-width: 700px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    max-width: 280px;
+    gap: 16px;
+  }
 `;
 
 const InputRow = styled.div`
@@ -55,6 +81,7 @@ const InputRow = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 `;
 
@@ -62,6 +89,10 @@ const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 6px;
+  }
 `;
 
 const Label = styled.label`
@@ -69,6 +100,10 @@ const Label = styled.label`
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.textGrayDark};
   text-align: left;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+  }
 `;
 
 const Input = styled.input`
@@ -95,6 +130,13 @@ const Input = styled.input`
     background-color: #f5f5f5;
     cursor: not-allowed;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
 `;
 
 const SubmitButton = styled.button`
@@ -113,6 +155,12 @@ const SubmitButton = styled.button`
   &:hover {
     background-color: ${props => props.disabled ? '#ccc' : props.theme.colors.primaryLight};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    height: 40px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
 `;
 
 
@@ -125,6 +173,13 @@ const PrivacyText = styled.p`
   width: 100%;
   max-width: 700px;
   padding-left: 8px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 9px;
+    margin: 16px 0 0 0;
+    max-width: 280px;
+    padding-left: 0;
+  }
 `;
 
 const SuccessMessage = styled.p`
@@ -135,6 +190,12 @@ const SuccessMessage = styled.p`
   margin: 20px 0 0 0;
   width: 100%;
   max-width: 700px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+    margin: 12px 0 0 0;
+    max-width: 280px;
+  }
 `;
 
 const ErrorMessage = styled.p`
@@ -145,6 +206,12 @@ const ErrorMessage = styled.p`
   margin: 20px 0 0 0;
   width: 100%;
   max-width: 700px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+    margin: 12px 0 0 0;
+    max-width: 280px;
+  }
 `;
 
 const ContactFormSection = () => {

@@ -73,6 +73,22 @@ const Title = styled.h1`
     color: ${props => props.theme.colors.primary};
   }
 
+  .mobile-break {
+    display: none;
+  }
+
+  .desktop-break {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     font-size: 48px;
     line-height: 1.4;
@@ -81,6 +97,22 @@ const Title = styled.h1`
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 28px;
     line-height: 1.35;
+
+    .mobile-break {
+      display: block;
+    }
+
+    .desktop-break {
+      display: none;
+    }
+
+    .mobile-only {
+      display: block;
+    }
+
+    .desktop-only {
+      display: none;
+    }
   }
 `;
 
@@ -193,10 +225,22 @@ const HeroSection = () => {
           매달 반복되는 서류 작업과 약국 업무, 이제 클릭 한 번으로 자동화하세요.
         </Subtitle>
         <Title>
-          아이당뇨는<br />
-          <span className="highlight">당뇨성 소모성</span><br />
-          <span className="highlight">재료 처방전 청구 과정을</span><br />
-          간편하게 처리합니다.
+          <span className="desktop-only">
+            아이당뇨는
+            <span className="desktop-break" />
+            <span className="highlight">당뇨성 소모성 재료 처방전 청구 과정</span>을
+            <span className="desktop-break" />
+            간편하게 처리합니다.
+          </span>
+          <span className="mobile-only">
+            아이당뇨는
+            <span className="mobile-break" />
+            <span className="highlight">당뇨성 소모성</span>
+            <span className="mobile-break" />
+            <span className="highlight">재료 처방전 청구 과정</span>을
+            <span className="mobile-break" />
+            간편하게 처리합니다.
+          </span>
         </Title>
         <ButtonWrapper>
           <HeroButton onClick={() => window.open('https://pharm.hdmedi.kr/', '_blank', 'noopener,noreferrer')}>

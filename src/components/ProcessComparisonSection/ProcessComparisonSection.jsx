@@ -61,8 +61,7 @@ const Subtitle = styled.p`
     font-weight: ${props => props.theme.fontWeights.medium};
     line-height: 1.5;
     margin: 0;
-    color: ${props => props.theme.colors.textGray};
-
+    color: ${props => props.theme.colors.black};
     .mobile-break {
       display: block;
     }
@@ -345,9 +344,9 @@ const ProcessComparisonSection = () => {
           업무 시간은 80% 이상 단축됩니다.
         </Title>
         <Subtitle>
-          "약사님은 클릭만 하세요.
+          약사님은 클릭만 하세요.
           <span className="mobile-break" />
-          나머지는 아이당뇨가 완벽히 처리합니다."
+          나머지는 아이당뇨가 완벽히 처리합니다.
         </Subtitle>
         <ComparisonWrapper>
           <OldProcessCard>

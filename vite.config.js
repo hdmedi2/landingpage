@@ -7,9 +7,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://daeil.hdmedi.shop',
+        target: 'http://api.daeil.hdmedi.shop',
         changeOrigin: true,
-        secure: true,
+        secure: false,
         rewrite: (path) => path,
         configure: (proxy, _options) => {
           proxy.on('error', (err, _req, _res) => {

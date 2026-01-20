@@ -27,10 +27,10 @@ const CheckboxWrapper = styled.div`
   top: 16px;
   width: 20px;
   height: 20px;
-  background-color: ${props => props.theme.colors.white};
-  border: 0.8px solid ${props => props.theme.colors.borderLight};
-  border-radius: 6px;
-  box-shadow: 0px 2px 2px 1px ${props => props.theme.colors.shadowCardLighter};
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,8 +56,8 @@ const CheckIconSmall = styled.img`
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     display: block;
-    width: 10px;
-    height: 8px;
+    width: 24px;
+    height: 22px;
     object-fit: contain;
   }
 `;
@@ -75,10 +75,11 @@ const Text = styled.p`
     top: 12px;
     font-size: 12px;
     font-weight: ${props => props.theme.fontWeights.semiBold};
-    line-height: 1.1;
+    line-height: 1.3;
     width: auto;
     max-width: 190px;
     flex: none;
+    white-space: pre-line;
   }
 `;
 

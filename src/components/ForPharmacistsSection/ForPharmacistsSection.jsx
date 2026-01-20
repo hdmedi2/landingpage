@@ -94,11 +94,19 @@ const Description = styled.p`
   line-height: 26px;
   color: ${props => props.theme.colors.text};
 
+  .mobile-break {
+    display: none;
+  }
+
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 14px;
     line-height: 1.5;
     max-width: 298px;
     margin: 0;
+
+    .mobile-break {
+      display: block;
+    }
   }
 
   .sentence-break {
@@ -177,7 +185,9 @@ const ForPharmacistsSection = () => {
           <Description>
             사람이 굳이 하지 않아도 되는 일, 번거로운 수작업만 정확히 제거해 드립니다.
             <span className="sentence-break" />
-            아이당뇨는 단순한 프로그램이 아니라 경영을 돕는 필수 솔루션입니다.
+            아이당뇨는 단순한 프로그램이 아니라{' '}
+            <span className="mobile-break" />
+            경영을 돕는 필수 솔루션입니다.
           </Description>
           <FeatureList>
             <FeatureItem>
