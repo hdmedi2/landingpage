@@ -62,6 +62,15 @@ export const submitContactForm = async (companyName, phoneNumber) => {
   // 하이픈이 포함된 형식으로 변환 (백엔드 요구사항)
   const formattedPhone = formatPhoneNumber(phoneNumber);
   
+  // 요청 데이터 준비
+  const requestData = {
+    companyName: companyName?.trim() || '',
+    phoneNumber: formattedPhone,
+  };
+  
+  // 디버깅: 전송되는 데이터 확인
+  console.log('전송되는 데이터:', requestData);
+  
   let lastError = null;
   
   // 각 엔드포인트를 순차적으로 시도
@@ -69,10 +78,7 @@ export const submitContactForm = async (companyName, phoneNumber) => {
     try {
       const response = await axios.post(
         endpoint,
-        {
-          companyName: companyName.trim(),
-          phoneNumber: formattedPhone,
-        },
+        requestData,
         {
           headers: {
             'Content-Type': 'application/json',
@@ -99,10 +105,7 @@ export const submitContactForm = async (companyName, phoneNumber) => {
             try {
               const response = await axios.post(
                 fallbackEndpoint,
-                {
-                  companyName: companyName.trim(),
-                  phoneNumber: formattedPhone,
-                },
+                requestData,
                 {
                   headers: {
                     'Content-Type': 'application/json',
