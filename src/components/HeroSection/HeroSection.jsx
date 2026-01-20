@@ -11,6 +11,12 @@ const HeroContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    margin-top: 60px;
+    min-height: calc(100vh * 0.8 - 60px);
+    height: calc(100vh * 0.8 - 60px);
+  }
 `;
 
 const BackgroundImage = styled.div`
@@ -49,6 +55,11 @@ const ContentWrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 16px;
+  }
 `;
 
 const Title = styled.h1`
@@ -66,6 +77,11 @@ const Title = styled.h1`
     font-size: 48px;
     line-height: 1.4;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 28px;
+    line-height: 1.35;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -74,6 +90,11 @@ const Subtitle = styled.p`
   color: ${props => props.theme.colors.white};
   line-height: 1.7;
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+    line-height: 1.45;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -86,6 +107,8 @@ const ButtonWrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    margin-top: 8px;
   }
 `;
 
@@ -112,6 +135,20 @@ const HeroButton = styled.button`
     content: '>';
     font-size: 22px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 169px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    font-size: 11px;
+    justify-content: center;
+    gap: 6px;
+
+    &::after {
+      font-size: 12px;
+    }
+  }
 `;
 
 const InquiryButton = styled.button`
@@ -128,6 +165,14 @@ const InquiryButton = styled.button`
 
   &:hover {
     opacity: 0.9;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 169px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    font-size: 11px;
   }
 `;
 
@@ -149,7 +194,8 @@ const HeroSection = () => {
         </Subtitle>
         <Title>
           아이당뇨는<br />
-          <span className="highlight">당뇨병 소모성 재료 처방전 청구 과정</span>을<br />
+          <span className="highlight">당뇨성 소모성</span><br />
+          <span className="highlight">재료 처방전 청구 과정을</span><br />
           간편하게 처리합니다.
         </Title>
         <ButtonWrapper>

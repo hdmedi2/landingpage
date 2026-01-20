@@ -9,6 +9,13 @@ const DiagramContainer = styled.div`
   max-width: 1200px;
   margin: -80px 0 auto;
   min-height: 400px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    border-radius: 28px;
+    padding: 24px 20px;
+    margin: 0;
+    min-height: auto;
+  }
 `;
 
 const FlowWrapper = styled.div`
@@ -17,6 +24,11 @@ const FlowWrapper = styled.div`
   justify-content: space-between;
   position: relative;
   padding: 20px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 12px;
+    padding: 8px 0;
+  }
 `;
 
 const Node = styled.div`
@@ -25,6 +37,12 @@ const Node = styled.div`
   align-items: center;
   gap: 16px;
   flex: 1;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 6px;
+    flex: 0 0 auto;
+    min-width: 72px;
+  }
 `;
 
 const NodeIcon = styled.div`
@@ -36,6 +54,13 @@ const NodeIcon = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 42px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    font-size: 20px;
+  }
 `;
 
 const NodeLabel = styled.div`
@@ -43,6 +68,10 @@ const NodeLabel = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 6px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 2px;
+  }
 `;
 
 const NodeTitle = styled.span`
@@ -50,6 +79,10 @@ const NodeTitle = styled.span`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+  }
 `;
 
 const NodeSubtitle = styled.span`
@@ -57,6 +90,10 @@ const NodeSubtitle = styled.span`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 7px;
+  }
 `;
 
 const CenterSection = styled.div`
@@ -68,6 +105,12 @@ const CenterSection = styled.div`
   position: relative;
   margin: 0 40px;
   min-width: 200px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    margin: 0 12px;
+    min-width: 120px;
+    gap: 8px;
+  }
 `;
 
 const ProgressBarContainer = styled.div`
@@ -77,6 +120,10 @@ const ProgressBarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 6px;
+  }
 `;
 
 const CenterBadge = styled.div`
@@ -88,6 +135,13 @@ const CenterBadge = styled.div`
   color: ${props => props.theme.colors.primary};
   white-space: nowrap;
   min-width:120px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    border-radius: 7px;
+    padding: 6px 14px;
+    font-size: 7px;
+    min-width: auto;
+  }
 `;
 
 const ProgressBarWrapper = styled.div`
@@ -97,6 +151,11 @@ const ProgressBarWrapper = styled.div`
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 120px;
+    height: 4px;
+  }
 `;
 
 const ProgressBar = styled.div`
@@ -112,6 +171,11 @@ const CenterTitle = styled.div`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.primary};
   margin-top: 8px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
+    margin-top: 0;
+  }
 `;
 
 const CenterSubtitle = styled.div`
@@ -121,6 +185,12 @@ const CenterSubtitle = styled.div`
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: -10px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 6px;
+    letter-spacing: 1px;
+    margin-top: 0;
+  }
 `;
 
 const StatusBadge = styled.div`
@@ -137,6 +207,14 @@ const StatusBadge = styled.div`
   ${props => props.$success 
     ? `background-color: ${props.theme.colors.successBorder}; border: 1.5px solid ${props.theme.colors.success}; color: ${props.theme.colors.success};`
     : `background-color: ${props.theme.colors.backgroundGrayLight}; border: 1.5px solid ${props.theme.colors.borderGray}; color: ${props.theme.colors.text};`
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 4px 8px;
+    font-size: 7px;
+    border-radius: 7px;
+    min-width: auto;
+    margin-top: 4px;
   }
 `;
 

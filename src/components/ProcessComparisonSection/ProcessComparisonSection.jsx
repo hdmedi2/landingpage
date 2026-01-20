@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 const Section = styled.section`
   width: 100%;
-  background-color: #FFFFF;
+  background-color: ${props => props.theme.colors.background};
   padding: 120px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -17,6 +21,11 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 30px;
+  }
 `;
 
 const Title = styled.h2`
@@ -25,6 +34,13 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+  margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 23px;
+    line-height: 1.35;
+    font-weight: ${props => props.theme.fontWeights.bold};
+  }
 `;
 
 const Subtitle = styled.p`
@@ -35,6 +51,22 @@ const Subtitle = styled.p`
   line-height: 1.6;
   margin-top: -40px;
   margin-bottom: -40px;
+
+  .mobile-break {
+    display: none;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
+    font-weight: ${props => props.theme.fontWeights.medium};
+    line-height: 1.5;
+    margin: 0;
+    color: ${props => props.theme.colors.textGray};
+
+    .mobile-break {
+      display: block;
+    }
+  }
 `;
 
 const ComparisonWrapper = styled.div`
@@ -51,6 +83,15 @@ const ComparisonWrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    gap: 16px;
+    justify-items: center;
+  }
 `;
 
 // 기존 방식(8단계) 카드 스타일
@@ -63,6 +104,14 @@ const OldProcessCard = styled.div`
   flex-direction: column;
   gap: 28px;
   box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    border-radius: 14px;
+    padding: 24px 20px;
+    gap: 16px;
+    max-width: 300px;
+    width: 100%;
+  }
 `;
 
 const OldCardIndicator = styled.div`
@@ -77,6 +126,10 @@ const OldCardTitle = styled.h3`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.textGray};
   margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 16px;
+  }
 `;
 
 const OldStepNumber = styled.div`
@@ -93,6 +146,14 @@ const OldStepNumber = styled.div`
   color: ${props => props.theme.colors.white};
   flex-shrink: 0;
   margin-top: 2px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 14px;
+    height: 14px;
+    border-radius: 6px;
+    font-size: 8px;
+    margin-top: 0;
+  }
 `;
 
 const OldStepTitle = styled.div`
@@ -100,6 +161,11 @@ const OldStepTitle = styled.div`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.textGray};
   line-height: 1.5;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+    line-height: 1.45;
+  }
 `;
 
 // 아이당뇨 방식(3단계) 카드 스타일
@@ -112,6 +178,14 @@ const NewProcessCard = styled.div`
   flex-direction: column;
   gap: 28px;
   box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    border-radius: 14px;
+    padding: 24px 20px;
+    gap: 16px;
+    max-width: 300px;
+    width: 100%;
+  }
 `;
 
 const NewCardIndicator = styled.div`
@@ -126,6 +200,10 @@ const NewCardTitle = styled.h3`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.white};
   margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 16px;
+  }
 `;
 
 const NewStepNumber = styled.div`
@@ -142,6 +220,14 @@ const NewStepNumber = styled.div`
   color: ${props => props.theme.colors.white};
   flex-shrink: 0;
   margin-top: 2px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    font-size: 13px;
+    margin-top: 0;
+  }
 `;
 
 const NewStepTitle = styled.div`
@@ -149,6 +235,11 @@ const NewStepTitle = styled.div`
   font-weight: ${props => props.theme.fontWeights.black};
   color: ${props => props.theme.colors.white};
   line-height: 1.5;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 13px;
+    line-height: 1.45;
+  }
 `;
 
 const NewStepDescription = styled.div`
@@ -157,6 +248,11 @@ const NewStepDescription = styled.div`
   color: ${props => props.theme.colors.white};
   line-height: 1.5;
   opacity: 1;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 9px;
+    line-height: 1.35;
+  }
 `;
 
 // 공통 스타일
@@ -164,6 +260,10 @@ const CardHeader = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 8px;
+  }
 `;
 
 const StepsList = styled.ul`
@@ -172,12 +272,20 @@ const StepsList = styled.ul`
   gap: 20px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 12px;
+  }
 `;
 
 const StepItem = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 16px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 10px;
+  }
 `;
 
 const StepContent = styled.div`
@@ -185,6 +293,10 @@ const StepContent = styled.div`
   flex-direction: column;
   gap: 6px;
   flex: 1;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 4px;
+  }
 `;
 
 const ProcessComparisonSection = () => {
@@ -233,7 +345,9 @@ const ProcessComparisonSection = () => {
           업무 시간은 80% 이상 단축됩니다.
         </Title>
         <Subtitle>
-          "약사님은 클릭만 하세요. 나머지는 아이당뇨가 완벽히 처리합니다."
+          "약사님은 클릭만 하세요.
+          <span className="mobile-break" />
+          나머지는 아이당뇨가 완벽히 처리합니다."
         </Subtitle>
         <ComparisonWrapper>
           <OldProcessCard>

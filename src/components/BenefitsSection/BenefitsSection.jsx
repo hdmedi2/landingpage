@@ -5,6 +5,10 @@ const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.backgroundGray};
   padding: 50px 0 120px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 40px 0 80px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -17,6 +21,11 @@ const Container = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 16px;
   }
 `;
 
@@ -31,6 +40,11 @@ const CardsWrapper = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 12px;
+    justify-items: center;
   }
 `;
 

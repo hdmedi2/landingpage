@@ -5,6 +5,10 @@ const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.background};
   padding: 120px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,11 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 24px;
+  }
 `;
 
 const Title = styled.h2`
@@ -26,6 +35,12 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 22px;
+    line-height: 1.35;
+    margin: 0;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -35,6 +50,14 @@ const Subtitle = styled.p`
   text-align: center;
   line-height: 1.6;
   margin-top: -30px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 12px;
+    font-weight: ${props => props.theme.fontWeights.medium};
+    color: ${props => props.theme.colors.textGray};
+    line-height: 1.5;
+    margin: 0;
+  }
 `;
 
 const CardsWrapper = styled.div`
@@ -50,6 +73,8 @@ const CardsWrapper = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 12px;
   }
 `;
 

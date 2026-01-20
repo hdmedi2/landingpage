@@ -5,6 +5,10 @@ const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.background};
   padding: 120px 0 70px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0 40px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,11 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 30px;
+  }
 `;
 
 const Title = styled.h2`
@@ -26,6 +35,12 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: ${props => props.theme.fontWeights.bold};
+  }
 `;
 
 const ItemsWrapper = styled.div`
@@ -37,6 +52,13 @@ const ItemsWrapper = styled.div`
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 100%;
+    gap: 12px;
+    margin-top: 0;
+    align-items: center;
+  }
 `;
 
 const RecommendationSection = () => {

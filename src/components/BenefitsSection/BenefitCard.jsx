@@ -14,6 +14,15 @@ const Card = styled.div`
   height: 100%;
   min-height: 280px;
   min-width: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    border-radius: 14px;
+    padding: 16px 18px;
+    gap: 10px;
+    min-height: auto;
+    max-width: 300px;
+    width: 100%;
+  }
 `;
 
 const Number = styled.div`
@@ -22,6 +31,11 @@ const Number = styled.div`
   color: ${props => props.theme.colors.primary};
   margin-bottom: 8px;
   text-align: center;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
 `;
 
 const Title = styled.h3`
@@ -31,6 +45,11 @@ const Title = styled.h3`
   margin: 0;
   text-align: center;
   width: 100%;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 15px;
+    line-height: 1.4;
+  }
 `;
 
 const Description = styled.p`
@@ -42,6 +61,11 @@ const Description = styled.p`
   text-align: center;
   white-space: pre-line;
   width: 100%;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 12px;
+    line-height: 1.55;
+  }
 `;
 
 const BenefitCard = ({ number, title, description }) => {

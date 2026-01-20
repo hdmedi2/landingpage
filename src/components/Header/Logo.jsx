@@ -13,6 +13,10 @@ const StyledLogo = styled.img`
   height: 32px; 
   width: auto;
   object-fit: contain;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    height: 24px;
+  }
 `;
 
 const Logo = () => {

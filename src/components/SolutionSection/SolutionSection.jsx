@@ -6,6 +6,10 @@ const Section = styled.section`
   width: 100%;
   background-color: ${props => props.theme.colors.backgroundGray};
   padding: 120px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -20,6 +24,11 @@ const Container = styled.div`
     padding: 0 40px;
     gap: 60px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 40px;
+  }
 `;
 
 const Title = styled.h2`
@@ -28,6 +37,13 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+  margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: ${props => props.theme.fontWeights.bold};
+  }
 `;
 
 const Subtitle = styled.p`
@@ -38,6 +54,15 @@ const Subtitle = styled.p`
   line-height: 1.6;
   margin-top: 10px;
   margin-bottom: 55px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 12px;
+    font-weight: ${props => props.theme.fontWeights.medium};
+    color: ${props => props.theme.colors.primary};
+    line-height: 1.5;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
 `;
 
 const FeaturesWrapper = styled.div`
@@ -48,6 +73,11 @@ const FeaturesWrapper = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 12px;
+    margin-top: 0;
   }
 `;
 
@@ -71,7 +101,10 @@ const SolutionSection = () => {
     <Section id="해결 개념">
       <Container>
         <div>
-          <Title>아이당뇨는 단순한 청구 프로그램이 아닙니다.</Title>
+          <Title>
+            아이당뇨는 단순한 <br />
+            청구 프로그램이 아닙니다.
+          </Title>
           <Subtitle>
             수작업 행정 구간만 정확히 제거하는 전문가용 '행정 제거 장치' 입니다.
           </Subtitle>

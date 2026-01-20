@@ -5,6 +5,10 @@ const Section = styled.section`
   width: 100%;
   background-color: #F9FAFB;
   padding: 120px 0 50px 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0 40px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,17 @@ const Container = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 11px;
+    gap: 30px;
+  }
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
 const Title = styled.h2`
@@ -26,6 +41,22 @@ const Title = styled.h2`
   line-height: 50px;
   color: ${props => props.theme.colors.text};
   text-align: center;
+  margin: 0;
+
+  .mobile-break {
+    display: none;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: ${props => props.theme.fontWeights.bold};
+    margin: 0;
+
+    .mobile-break {
+      display: block;
+    }
+  }
 `;
 
 const Subtitle = styled.p`
@@ -34,8 +65,14 @@ const Subtitle = styled.p`
   color: ${props => props.theme.colors.black};
   text-align: center;
   line-height: 1.6;
-  margin-top: -40px;
-  margin-bottom: -40px;
+  margin: 0;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
+    font-weight: ${props => props.theme.fontWeights.medium};
+    line-height: 1.5;
+    color: ${props => props.theme.colors.black};
+  }
 `;
 
 const StatsWrapper = styled.div`
@@ -53,13 +90,19 @@ const StatsWrapper = styled.div`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 300px;
+    gap: 12px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 
 const StatisticsSection = () => {
   const stats = [
-    { number: '350+', label: '활발한 이용 약국' },
+    { number: '+350', label: '활발한 이용 약국' },
     { number: '80%', label: '처리 시간 단축' },
     { number: '90%', label: '반려 / 오류 감소' },
     { number: '3분', label: '평균 청구 처리' },
@@ -68,10 +111,16 @@ const StatisticsSection = () => {
   return (
     <Section id="증명과 신뢰-통계">
       <Container>
-        <Title>이미 현장에서 수백 명이 증명하고 있습니다.</Title>
-        <Subtitle>
-          단순한 숫자가 아닌, 실제 약국 현장의 목소리입니다.
-        </Subtitle>
+        <TitleWrapper>
+          <Title>
+            이미 현장에서 수백 명이
+            <span className="mobile-break" />
+            증명하고 있습니다.
+          </Title>
+          <Subtitle>
+            단순한 숫자가 아닌, 실제 약국 현장의 목소리입니다.
+          </Subtitle>
+        </TitleWrapper>
         <StatsWrapper>
           {stats.map((stat, index) => (
             <StatCard

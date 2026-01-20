@@ -14,6 +14,7 @@ const Button = styled.a`
   transition: background-color 0.2s;
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryLight};
@@ -22,6 +23,10 @@ const Button = styled.a`
   &::after {
     content: '>';
     font-size: 18px;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    display: none;
   }
 `;
 

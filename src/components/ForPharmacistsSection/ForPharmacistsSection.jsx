@@ -6,6 +6,10 @@ const Section = styled.section`
   background-color: ${props => props.theme.colors.backgroundGray};
   padding: 120px 0;
   position: relative;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 60px 0;
+  }
 `;
 
 const Container = styled.div`
@@ -22,6 +26,12 @@ const Container = styled.div`
     padding: 0 40px;
     gap: 40px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 20px;
+    gap: 24px;
+    justify-items: center;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -30,6 +40,13 @@ const ImageWrapper = styled.div`
   height: 400px;
   border-radius: 20px;
   overflow: hidden;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    max-width: 274px;
+    width: 100%;
+    height: 162px;
+    border-radius: 20px;
+  }
 `;
 
 const Image = styled.img`
@@ -42,6 +59,12 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
 `;
 
 const Label = styled.span`
@@ -57,13 +80,30 @@ const Quote = styled.h2`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 52px;
   color: ${props => props.theme.colors.text};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 24px;
+    line-height: 1.4;
+    margin: 0;
+  }
 `;
 
 const Description = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 298px;
+    margin: 0;
+  }
+
+  .sentence-break {
+    display: block;
+  }
 `;
 
 const FeatureList = styled.ul`
@@ -71,6 +111,17 @@ const FeatureList = styled.ul`
   flex-direction: column;
   gap: 11px;
   margin-top: 10px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    gap: 10px;
+    margin-top: 6px;
+    align-items: flex-start;
+    padding: 0;
+    width: fit-content;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const FeatureItem = styled.li`
@@ -80,6 +131,14 @@ const FeatureItem = styled.li`
   font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.text};
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 10px;
+    font-weight: ${props => props.theme.fontWeights.semiBold};
+    line-height: 1.4;
+    justify-content: flex-start;
+    text-align: left;
+  }
 `;
 
 const CheckIcon = styled.span`
@@ -90,6 +149,13 @@ const CheckIcon = styled.span`
   justify-content: center;
   color: ${props => props.theme.colors.primary};
   font-size: 32px;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    min-width: 14px;
+  }
 `;
 
 const ForPharmacistsSection = () => {
@@ -109,7 +175,8 @@ const ForPharmacistsSection = () => {
             환자와 본업에 집중하세요."
           </Quote>
           <Description>
-            사람이 굳이 하지 않아도 되는 일, 번거로운 수작업만 정확히 골라 제거해 드립니다. 
+            사람이 굳이 하지 않아도 되는 일, 번거로운 수작업만 정확히 제거해 드립니다.
+            <span className="sentence-break" />
             아이당뇨는 단순한 프로그램이 아니라 경영을 돕는 필수 솔루션입니다.
           </Description>
           <FeatureList>

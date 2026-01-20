@@ -14,6 +14,14 @@ const NavContainer = styled.nav`
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     gap: 20px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    position: static;
+    transform: none;
+    gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
+  }
 `;
 
 const NavItem = styled.a`
@@ -29,6 +37,10 @@ const NavItem = styled.a`
 
   &:hover {
     color: ${props => props.theme.colors.primary};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 14px;
   }
 `;
 
@@ -66,6 +78,17 @@ const DropdownMenu = styled.div`
   transform: translateX(-50%) translateY(${props => props.$isOpen ? '0' : '-10px'});
   transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
   z-index: 1000;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    margin-top: 16px;
+    min-width: 140px;
+  }
+`;
+
+const ServicesItem = styled(NavItem)`
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    display: none;
+  }
 `;
 
 const DropdownItem = styled.a`
@@ -201,7 +224,7 @@ const Navigation = () => {
           ))}
         </DropdownMenu>
       </DropdownContainer>
-      <NavItem>Services</NavItem>
+      <ServicesItem>Services</ServicesItem>
     </NavContainer>
   );
 };

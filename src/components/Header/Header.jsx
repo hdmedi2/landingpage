@@ -22,6 +22,12 @@ const HeaderContainer = styled.header`
     padding: 0 20px;
     height: 70px;
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 0 12px;
+    height: 60px;
+    gap: 8px;
+  }
 `;
 
 const Header = () => {
