@@ -41,16 +41,40 @@ const Subtitle = styled.p`
 
 const FormWrapper = styled.div`
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
   max-width: 700px;
 `;
 
+const InputRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+const Label = styled.label`
+  font-size: 14px;
+  font-weight: ${props => props.theme.fontWeights.medium};
+  color: ${props => props.theme.colors.textGrayDark};
+  text-align: left;
+`;
+
 const Input = styled.input`
-  flex: 1;
+  width: 100%;
   height: 56px;
-  padding: 0 28px;
+  padding: 0 20px;
   border: 1px solid #E0E0E0;
   border-radius: 12px;
   font-size: 16px;
@@ -66,9 +90,15 @@ const Input = styled.input`
     border-color: ${props => props.theme.colors.primary};
     outline: none;
   }
+
+  &:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+  }
 `;
 
 const SubmitButton = styled.button`
+  width: 100%;
   height: 56px;
   padding: 0 32px;
   background-color: ${props => props.disabled ? '#ccc' : props.theme.colors.primary};
@@ -76,25 +106,15 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 12px;
   font-size: 16px;
-  font-weight: ${props => props.theme.fontWeights.medium};
+  font-weight: ${props => props.theme.fontWeights.bold};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   transition: background-color 0.2s;
-  white-space: nowrap;
 
   &:hover {
     background-color: ${props => props.disabled ? '#ccc' : props.theme.colors.primaryLight};
   }
 `;
 
-const HelperText = styled.p`
-  font-size: 14px;
-  font-weight: ${props => props.theme.fontWeights.medium};
-  color: ${props => props.theme.colors.primary};
-  text-align: left;
-  margin: 8px 0 0 0;
-  width: 100%;
-  max-width: 700px;
-`;
 
 const PrivacyText = styled.p`
   font-size: 11px;
@@ -128,6 +148,7 @@ const ErrorMessage = styled.p`
 `;
 
 const ContactFormSection = () => {
+  const [pharmacyName, setPharmacyName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -137,6 +158,11 @@ const ContactFormSection = () => {
     e.preventDefault();
     
     // 입력값 검증
+    if (!pharmacyName.trim()) {
+      setError('약국명을 입력해주세요.');
+      return;
+    }
+
     if (!phoneNumber.trim()) {
       setError('전화번호를 입력해주세요.');
       return;
@@ -146,7 +172,7 @@ const ContactFormSection = () => {
     const phoneWithoutHyphen = phoneNumber.trim().replace(/-/g, '');
     const phoneRegex = /^[0-9]{9,11}$/; // 9~11자리 숫자
     if (!phoneRegex.test(phoneWithoutHyphen)) {
-      setError('올바른 전화번호 형식으로 입력해주세요. (예: 02-123-4567)');
+      setError('올바른 전화번호 형식으로 입력해주세요. (예: 02-1234-5678)');
       return;
     }
 
@@ -155,8 +181,9 @@ const ContactFormSection = () => {
     setIsSuccess(false);
 
     try {
-      await submitContactForm(phoneNumber.trim());
+      await submitContactForm(pharmacyName.trim(), phoneNumber.trim());
       setIsSuccess(true);
+      setPharmacyName(''); // 성공 시 입력값 초기화
       setPhoneNumber(''); // 성공 시 입력값 초기화
       
       // 3초 후 성공 메시지 숨기기
@@ -191,28 +218,43 @@ const ContactFormSection = () => {
       <Container>
         <Title>도입을 고민 중이신가요?</Title>
         <Subtitle>
-          기관 전화번호를 남겨주시면,<br />
+           약국 전화번호를 남겨주시면,<br />
           담당자가 확인 후 직접 연락드리겠습니다.
         </Subtitle>
         <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
           <FormWrapper>
-            <Input
-              type="tel"
-              placeholder="기관 전화번호를 입력해주세요."
-              value={phoneNumber}
-              onChange={(e) => {
-                setPhoneNumber(e.target.value);
-                setError(''); // 입력 시 에러 메시지 초기화
-              }}
-              disabled={isLoading}
-            />
+            <InputRow>
+              <InputGroup>
+                <Label>약국명</Label>
+                <Input
+                  type="text"
+                  placeholder="예 : 행복한 약국"
+                  value={pharmacyName}
+                  onChange={(e) => {
+                    setPharmacyName(e.target.value);
+                    setError(''); // 입력 시 에러 메시지 초기화
+                  }}
+                  disabled={isLoading}
+                />
+              </InputGroup>
+              <InputGroup>
+                <Label>약국 전화번호</Label>
+                <Input
+                  type="tel"
+                  placeholder="예: 02-1234-5678"
+                  value={phoneNumber}
+                  onChange={(e) => {
+                    setPhoneNumber(e.target.value);
+                    setError(''); // 입력 시 에러 메시지 초기화
+                  }}
+                  disabled={isLoading}
+                />
+              </InputGroup>
+            </InputRow>
             <SubmitButton type="submit" disabled={isLoading}>
-              {isLoading ? '전송 중...' : '전송'}
+              {isLoading ? '전송 중...' : '전송하기'}
             </SubmitButton>
           </FormWrapper>
-          <HelperText>
-            * 하이픈(-)을 포함하여 입력해주세요. (예 : 02-123-4567)
-          </HelperText>
           {isSuccess && (
             <SuccessMessage>
               ✓ 전송이 완료되었습니다. 담당자가 확인 후 연락드리겠습니다.

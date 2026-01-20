@@ -28,14 +28,14 @@ const Node = styled.div`
 `;
 
 const NodeIcon = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 120px;
   background-color: ${props => props.theme.colors.backgroundGrayLight};
-  border-radius: 35px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 42px;
 `;
 
 const NodeLabel = styled.div`
@@ -53,7 +53,7 @@ const NodeTitle = styled.span`
 `;
 
 const NodeSubtitle = styled.span`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   text-align: center;
@@ -81,7 +81,7 @@ const ProgressBarContainer = styled.div`
 
 const CenterBadge = styled.div`
   background-color: ${props => props.theme.colors.blueLight};
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 8px 30px;
   font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
@@ -128,7 +128,7 @@ const StatusBadge = styled.div`
   align-items: center;
   justify-content: center;
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.bold};
   margin-top: 12px;

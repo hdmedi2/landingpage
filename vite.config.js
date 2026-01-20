@@ -20,6 +20,10 @@ export default defineConfig({
           });
           proxy.on('proxyRes', (proxyRes, req, _res) => {
             console.log('Received Response from the Target:', proxyRes.statusCode, req.url);
+            // 403 에러인 경우 다른 도메인으로 재시도할 수 있도록 로그 출력
+            if (proxyRes.statusCode === 403) {
+              console.warn('프록시가 403 에러를 반환했습니다. 백엔드 서버 설정을 확인해주세요.');
+            }
           });
         },
       },

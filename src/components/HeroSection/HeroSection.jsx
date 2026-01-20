@@ -31,7 +31,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 `;
 
@@ -92,7 +92,7 @@ const ButtonWrapper = styled.div`
 const HeroButton = styled.button`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
-  border-radius: 32px;
+  border-radius: 20px;
   padding: 20px 48px;
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
@@ -115,10 +115,10 @@ const HeroButton = styled.button`
 `;
 
 const InquiryButton = styled.button`
-  background-color: transparent;
-  color: ${props => props.theme.colors.white};
-  border: 2px solid ${props => props.theme.colors.white};
-  border-radius: 32px;
+  background-color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.text};
+  border: none;
+  border-radius: 20px;
   padding: 20px 48px;
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
@@ -127,8 +127,7 @@ const InquiryButton = styled.button`
   white-space: nowrap;
 
   &:hover {
-    background-color: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.text};
+    opacity: 0.9;
   }
 `;
 
@@ -150,7 +149,7 @@ const HeroSection = () => {
         </Subtitle>
         <Title>
           아이당뇨는<br />
-          당뇨병 소모성 재료 처방전 청구 과정을<br />
+          <span className="highlight">당뇨병 소모성 재료 처방전 청구 과정</span>을<br />
           간편하게 처리합니다.
         </Title>
         <ButtonWrapper>

@@ -4,9 +4,12 @@ import axios from 'axios';
 const isDevelopment = import.meta.env.DEV;
 
 // API 엔드포인트 목록 (fallback 지원)
+// 개발 환경에서는 프록시를 사용하지만, 프록시가 실패하면 다른 도메인으로 재시도
 const API_ENDPOINTS = isDevelopment
   ? [
-      '/api/leads/phone', // 개발 환경: 프록시 사용
+      '/api/leads/phone', // 개발 환경: 프록시 사용 (vite.config.js의 프록시 설정 참조)
+      // 프록시가 403을 반환하는 경우를 대비해 직접 호출도 시도
+      // 단, CORS 에러가 발생할 수 있으므로 백엔드 서버에서 CORS 설정이 필요합니다
     ]
   : [
       'https://daeil.hdmedi.shop/api/leads/phone',
@@ -51,10 +54,11 @@ const formatPhoneNumber = (phoneNumber) => {
 /**
  * 연락처 폼 제출 API
  * 첫 번째 도메인 실패 시 두 번째 도메인으로 자동 재시도
+ * @param {string} companyName - 약국명
  * @param {string} phoneNumber - 기관 전화번호 (하이픈 포함/미포함 모두 가능)
  * @returns {Promise} API 응답
  */
-export const submitContactForm = async (phoneNumber) => {
+export const submitContactForm = async (companyName, phoneNumber) => {
   // 하이픈이 포함된 형식으로 변환 (백엔드 요구사항)
   const formattedPhone = formatPhoneNumber(phoneNumber);
   
@@ -66,6 +70,7 @@ export const submitContactForm = async (phoneNumber) => {
       const response = await axios.post(
         endpoint,
         {
+          companyName: companyName.trim(),
           phoneNumber: formattedPhone,
         },
         {
@@ -79,9 +84,50 @@ export const submitContactForm = async (phoneNumber) => {
       // 성공 시 즉시 반환
       return response.data;
     } catch (error) {
-      // CORS 에러인 경우 명확한 에러 메시지 제공
-      if (error.code === 'ERR_NETWORK' || error.message.includes('CORS')) {
-        const corsError = new Error('CORS 정책으로 인해 요청이 차단되었습니다. 서버 측에서 CORS 설정이 필요합니다.');
+      // 403 에러인 경우 (프록시가 거부한 경우)
+      if (error.response?.status === 403) {
+        // 개발 환경에서 프록시가 403을 반환하면 다른 도메인으로 재시도
+        if (isDevelopment && endpoint === '/api/leads/phone') {
+          console.warn('프록시가 403을 반환했습니다. 다른 도메인으로 재시도합니다.');
+          // 다른 도메인으로 재시도
+          const fallbackEndpoints = [
+            'https://daeil.hdmedi.shop/api/leads/phone',
+            'https://sdbio.hdmedi.shop/api/leads/phone',
+          ];
+          
+          for (const fallbackEndpoint of fallbackEndpoints) {
+            try {
+              const response = await axios.post(
+                fallbackEndpoint,
+                {
+                  companyName: companyName.trim(),
+                  phoneNumber: formattedPhone,
+                },
+                {
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  timeout: 10000,
+                }
+              );
+              return response.data;
+            } catch (fallbackError) {
+              // CORS 에러인 경우
+              if (fallbackError.code === 'ERR_NETWORK' || fallbackError.message.includes('CORS')) {
+                const corsError = new Error('서버 연결 오류가 발생했습니다. 백엔드 서버의 CORS 설정을 확인해주세요.');
+                corsError.isCorsError = true;
+                lastError = corsError;
+              } else {
+                lastError = fallbackError;
+              }
+            }
+          }
+        } else {
+          lastError = error;
+        }
+      } else if (error.code === 'ERR_NETWORK' || error.message.includes('CORS')) {
+        // CORS 에러인 경우 명확한 에러 메시지 제공
+        const corsError = new Error('서버 연결 오류가 발생했습니다. 백엔드 서버의 CORS 설정을 확인해주세요.');
         corsError.isCorsError = true;
         lastError = corsError;
       } else {

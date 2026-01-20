@@ -73,7 +73,7 @@ const OldCardIndicator = styled.div`
 `;
 
 const OldCardTitle = styled.h3`
-  font-size: 22px;
+  font-size: 26px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.textGray};
   margin: 0;
@@ -122,7 +122,7 @@ const NewCardIndicator = styled.div`
 `;
 
 const NewCardTitle = styled.h3`
-  font-size: 22px;
+  font-size: 26px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.white};
   margin: 0;
