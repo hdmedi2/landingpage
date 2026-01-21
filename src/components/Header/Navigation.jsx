@@ -85,12 +85,6 @@ const DropdownMenu = styled.div`
   }
 `;
 
-const ServicesItem = styled(NavItem)`
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    display: none;
-  }
-`;
-
 const DropdownItem = styled.a`
   display: block;
   padding: 12px 20px;
@@ -224,7 +218,7 @@ const Navigation = () => {
           ))}
         </DropdownMenu>
       </DropdownContainer>
-      <ServicesItem>Services</ServicesItem>
+      
     </NavContainer>
   );
 };
