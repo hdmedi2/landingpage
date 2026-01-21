@@ -10,8 +10,7 @@ const API_ENDPOINTS = isDevelopment
       '/api/leads/phone', // 개발 환경: 프록시 사용 (vite.config.js의 프록시 설정 참조)
     ]
   : [
-      'https://api.daeil.hdmedi.shop/api/leads/phone',
-      'https://sdbio.hdmedi.shop/api/leads/phone',
+      'https://api.sdbio.hdmedi.shop/api/leads/phone',
     ];
 
 
@@ -67,8 +66,7 @@ export const submitContactForm = async (companyName, phoneNumber) => {
           console.warn(`⚠️ 프록시가 ${error.response.status}을 반환했습니다. 다른 도메인으로 재시도합니다.`);
           // 다른 도메인으로 재시도
           const fallbackEndpoints = [
-            'https://api.daeil.hdmedi.shop/api/leads/phone',
-            'https://sdbio.hdmedi.shop/api/leads/phone',
+            'https://api.sdbio.hdmedi.shop/api/leads/phone',
           ];
           
           for (const fallbackEndpoint of fallbackEndpoints) {
