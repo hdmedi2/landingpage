@@ -1,12 +1,7 @@
 import axios from 'axios';
 
-// 개발 환경에서는 프록시 사용, 프로덕션에서는 직접 호출
-const isDevelopment = import.meta.env.DEV;
-
-// API 엔드포인트 (개발 환경에서는 프록시 사용)
-const API_ENDPOINT = isDevelopment
-  ? '/api/leads/phone' // 개발 환경: 프록시 사용 (vite.config.js의 프록시 설정 참조)
-  : 'https://daeil.hdmedi.shop/api/leads/phone';
+// API 엔드포인트 (항상 실제 서버로 직접 호출)
+const API_ENDPOINT = 'https://api.daeil.hdmedi.shop/api/leads/phone';
 
 
 /**
