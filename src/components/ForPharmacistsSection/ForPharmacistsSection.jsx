@@ -179,7 +179,7 @@ const ForPharmacistsSection = () => {
         <ContentWrapper>
 
           <Quote>
-            "약국 업무는 줄이고,<br />
+            "행정은 줄이고,<br />
             환자와 본업에 집중하세요."
           </Quote>
           <Description>

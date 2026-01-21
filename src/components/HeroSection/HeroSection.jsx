@@ -59,8 +59,11 @@ const ContentWrapper = styled.div`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    padding: 0 20px;
-    gap: 16px;
+    margin-left: 30px;
+    padding: 0 24px;
+    gap: 18px;
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -97,8 +100,9 @@ const Title = styled.h1`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 28px;
-    line-height: 1.35;
+    font-size: 26px;
+    line-height: 1.4;
+    text-align: center;
 
     .mobile-break {
       display: block;
@@ -126,8 +130,10 @@ const Subtitle = styled.p`
   text-align: left;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 10px;
-    line-height: 1.45;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: center;
+    order: -1;
   }
 `;
 
@@ -140,16 +146,16 @@ const ButtonWrapper = styled.div`
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-top: 8px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
   }
 `;
 
 const HeroButton = styled.button`
   background-color: ${props => props.theme.colors.primary};
   color: ${props => props.theme.colors.white};
-  border-radius: 20px;
+  border-radius: 32px;
   padding: 20px 48px;
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
@@ -171,10 +177,10 @@ const HeroButton = styled.button`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    width: 169px;
-    height: 40px;
+    width: 200px;
+    height: 42px;
     padding: 0;
-    border-radius: 12px;
+    border-radius: 21px;
     font-size: 11px;
     justify-content: center;
     gap: 6px;
@@ -185,7 +191,39 @@ const HeroButton = styled.button`
   }
 `;
 
+const InquiryButton = styled.button`
+  background-color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.text};
+  border: none;
+  border-radius: 32px;
+  padding: 20px 48px;
+  font-size: 20px;
+  font-weight: ${props => props.theme.fontWeights.extraBold};
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    width: 200px;
+    height: 42px;
+    padding: 0;
+    border-radius: 21px;
+    font-size: 11px;
+  }
+`;
+
 const HeroSection = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('도입을-고민중이신가요');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <HeroContainer>
       <BackgroundImage />
@@ -216,6 +254,9 @@ const HeroSection = () => {
           <HeroButton onClick={() => window.open('https://pharm.hdmedi.kr/', '_blank', 'noopener,noreferrer')}>
             아이당뇨 웹사이트 이동하기
           </HeroButton>
+          <InquiryButton onClick={scrollToContact}>
+            도입 문의하기
+          </InquiryButton>
         </ButtonWrapper>
       </ContentWrapper>
     </HeroContainer>

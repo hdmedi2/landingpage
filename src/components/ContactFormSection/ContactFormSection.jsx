@@ -333,7 +333,7 @@ const ContactFormSection = () => {
       <Container>
         <Title>도입을 고민 중이신가요?</Title>
         <Subtitle>
-           기관 전화번호를 남겨주시면,<br />
+           기관명과 기관 전화번호를 남겨주시면,<br />
           담당자가 확인 후 직접 연락드리겠습니다.
         </Subtitle>
         <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
@@ -343,7 +343,7 @@ const ContactFormSection = () => {
                 <Label>기관명</Label>
                 <Input
                   type="text"
-                  placeholder="예 : 행복한 약국"
+                  placeholder=""
                   value={pharmacyName}
                   onChange={(e) => {
                     setPharmacyName(e.target.value);
