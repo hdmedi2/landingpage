@@ -304,14 +304,11 @@ const ProcessComparisonSection = () => {
 
   // 기존 방식(5단계) 단계 데이터
   const oldProcessSteps = [
-    { number: '1', title: '처방전 접수' },
-    { number: '2', title: '서류 작성(청수서, 위임장, 거래명세서 등)' },
-    { number: '3', title: '공단 포털 접속 / 로그인' },
-    { number: '4', title: '수기 입력 / 서류 업로드' },
-    { number: '5', title: '요양비 지급 확인 / 반려 사유 확인' },
-    { number: '6', title: '요양비 지급 확인 / 반려 사유 확인' },
-    { number: '7', title: '오류 확인 및 수정' },
-    { number: '8', title: '재청구 작업' },
+    { number: '1', title: '내부 시스템 확인(EMR)' },
+    { number: '2', title: '공단 포털 접속 / 로그인'},
+    { number: '3', title: '수기 입력 / 서류 업로드' },
+    { number: '4', title: '오류 확인 및 수정' },
+    { number: '5', title: '재청구 작업' },
   ];
 
   // 아이당뇨 방식(3단계) 카드 제목

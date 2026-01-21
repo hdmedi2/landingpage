@@ -37,7 +37,7 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 `;
 
@@ -46,11 +46,13 @@ const ContentWrapper = styled.div`
   z-index: 2;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 120px;
+  padding: 0 120px 0 0px;
+  margin-left: 500px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  align-items: center;
+  align-items: flex-start;
+  text-align: left;
 
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     padding: 0 40px;
@@ -67,7 +69,7 @@ const Title = styled.h1`
   font-weight: ${props => props.theme.fontWeights.extraBold};
   line-height: 90px;
   color: ${props => props.theme.colors.white};
-  text-align: center;
+  text-align: left;
   
   .highlight {
     color: ${props => props.theme.colors.primary};
@@ -121,7 +123,7 @@ const Subtitle = styled.p`
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.white};
   line-height: 1.7;
-  text-align: center;
+  text-align: left;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 10px;
@@ -134,7 +136,7 @@ const ButtonWrapper = styled.div`
   display: flex;
   gap: 15px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     flex-direction: column;
@@ -183,54 +185,19 @@ const HeroButton = styled.button`
   }
 `;
 
-const InquiryButton = styled.button`
-  background-color: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.text};
-  border: none;
-  border-radius: 20px;
-  padding: 20px 48px;
-  font-size: 20px;
-  font-weight: ${props => props.theme.fontWeights.extraBold};
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-
-  &:hover {
-    opacity: 0.9;
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    width: 169px;
-    height: 40px;
-    padding: 0;
-    border-radius: 12px;
-    font-size: 11px;
-  }
-`;
-
 const HeroSection = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('도입을-고민중이신가요');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <HeroContainer>
       <BackgroundImage />
       <Overlay />
       <ContentWrapper>
-        <Subtitle>
-          매달 반복되는 서류 작업과 약국 업무, 이제 클릭 한 번으로 자동화하세요.
-        </Subtitle>
         <Title>
           <span className="desktop-only">
             아이당뇨는
             <span className="desktop-break" />
-            <span className="highlight">당뇨성 소모성 재료 처방전 청구 과정</span>을
+            <span className="highlight">요양비 청구 과정</span>을
             <span className="desktop-break" />
-            간편하게 처리합니다.
+            단순하게 만듭니다.
           </span>
           <span className="mobile-only">
             아이당뇨는
@@ -242,13 +209,13 @@ const HeroSection = () => {
             간편하게 처리합니다.
           </span>
         </Title>
+        <Subtitle>
+          매달 반복되는 서류 작업과 행정 절차, 이제 클릭 한 번으로 자동화하세요.
+        </Subtitle>
         <ButtonWrapper>
           <HeroButton onClick={() => window.open('https://pharm.hdmedi.kr/', '_blank', 'noopener,noreferrer')}>
             아이당뇨 웹사이트 이동하기
           </HeroButton>
-          <InquiryButton onClick={scrollToContact}>
-            도입 문의하기
-          </InquiryButton>
         </ButtonWrapper>
       </ContentWrapper>
     </HeroContainer>
