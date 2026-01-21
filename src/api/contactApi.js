@@ -14,16 +14,6 @@ const API_ENDPOINTS = isDevelopment
       'https://sdbio.hdmedi.shop/api/leads/phone',
     ];
 
-/**
- * 전화번호에서 하이픈 제거 (백엔드 요구사항: 숫자만 전송)
- * 예시: "010-1234-5678" -> "01012345678"
- * @param {string} phoneNumber - 전화번호 (하이픈 포함/미포함)
- * @returns {string} 하이픈이 제거된 전화번호 (숫자만)
- */
-const formatPhoneNumber = (phoneNumber) => {
-  // 숫자만 추출하여 반환
-  return phoneNumber.replace(/[^0-9]/g, '');
-};
 
 /**
  * 연락처 폼 제출 API
@@ -33,13 +23,10 @@ const formatPhoneNumber = (phoneNumber) => {
  * @returns {Promise} API 응답
  */
 export const submitContactForm = async (companyName, phoneNumber) => {
-  // 하이픈 제거하여 숫자만 전송 (백엔드 요구사항)
-  const formattedPhone = formatPhoneNumber(phoneNumber);
-  
-  // 요청 데이터 준비
+  // 요청 데이터 준비 (하이픈 유지 전송)
   const requestData = {
     companyName: companyName?.trim() || '',
-    phoneNumber: formattedPhone,
+    phoneNumber: phoneNumber?.trim() || '',
   };
   
   // 디버깅: 전송되는 데이터 확인

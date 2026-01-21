@@ -221,6 +221,32 @@ const ContactFormSection = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
 
+  const formatPhoneInput = (value) => {
+    const digits = value.replace(/[^0-9]/g, '');
+    if (digits.length <= 2) {
+      return digits;
+    }
+    if (digits.startsWith('02')) {
+      if (digits.length <= 5) {
+        return `${digits.slice(0, 2)}-${digits.slice(2)}`;
+      }
+      if (digits.length <= 9) {
+        return `${digits.slice(0, 2)}-${digits.slice(2, 5)}-${digits.slice(5)}`;
+      }
+      return `${digits.slice(0, 2)}-${digits.slice(2, 6)}-${digits.slice(6, 10)}`;
+    }
+    if (digits.length <= 3) {
+      return digits;
+    }
+    if (digits.length <= 6) {
+      return `${digits.slice(0, 3)}-${digits.slice(3)}`;
+    }
+    if (digits.length <= 10) {
+      return `${digits.slice(0, 3)}-${digits.slice(3, 6)}-${digits.slice(6)}`;
+    }
+    return `${digits.slice(0, 3)}-${digits.slice(3, 7)}-${digits.slice(7, 11)}`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -333,7 +359,7 @@ const ContactFormSection = () => {
                   placeholder="예: 02-1234-5678"
                   value={phoneNumber}
                   onChange={(e) => {
-                    setPhoneNumber(e.target.value);
+                    setPhoneNumber(formatPhoneInput(e.target.value));
                     setError(''); // 입력 시 에러 메시지 초기화
                   }}
                   disabled={isLoading}
