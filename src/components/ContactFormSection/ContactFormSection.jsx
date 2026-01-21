@@ -333,14 +333,14 @@ const ContactFormSection = () => {
       <Container>
         <Title>도입을 고민 중이신가요?</Title>
         <Subtitle>
-           약국 전화번호를 남겨주시면,<br />
+           기관 전화번호를 남겨주시면,<br />
           담당자가 확인 후 직접 연락드리겠습니다.
         </Subtitle>
         <form onSubmit={handleSubmit} style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}>
           <FormWrapper>
             <InputRow>
               <InputGroup>
-                <Label>약국명</Label>
+                <Label>기관명</Label>
                 <Input
                   type="text"
                   placeholder="예 : 행복한 약국"
@@ -353,7 +353,7 @@ const ContactFormSection = () => {
                 />
               </InputGroup>
               <InputGroup>
-                <Label>약국 전화번호</Label>
+                <Label>기관 전화번호</Label>
                 <Input
                   type="tel"
                   placeholder="예: 02-1234-5678"
