@@ -135,6 +135,8 @@ const CenterBadge = styled.div`
   color: ${props => props.theme.colors.primary};
   white-space: nowrap;
   min-width:120px;
+  margin-top: -15px;
+  margin-bottom: 20px;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     border-radius: 7px;

@@ -59,7 +59,7 @@ const Description = styled.p`
   white-space: pre-line;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: ${props => props.theme.fontWeights.medium};
     color: ${props => props.theme.colors.textGray};
     line-height: 1.5;

@@ -61,7 +61,7 @@ const Description = styled.p`
   text-align: center;
   white-space: pre-line;
   width: 100%;
-  opacity: 0.55;
+ 
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 12px;

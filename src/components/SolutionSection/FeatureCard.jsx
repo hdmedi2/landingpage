@@ -39,7 +39,6 @@ const Description = styled.p`
   font-size: 18px;
   font-weight: ${props => props.theme.fontWeights.regular};
   color: ${props => props.theme.colors.textGrayLight};
-  opacity: 0.55;
   line-height: 1.7;
   margin: 0;
   white-space: pre-line;
