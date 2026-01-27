@@ -89,7 +89,7 @@ const Quote = styled.h2`
 `;
 
 const Description = styled.p`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};

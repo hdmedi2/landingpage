@@ -71,9 +71,9 @@ const ItemsWrapper = styled.div`
 
 const RecommendationSection = () => {
   const recommendations = [
-    '당뇨 요양비 청구 건수가\n매달 꾸준히 발생하는 약국',
-    '청구 반려와 재작업 스트레스로\n업무 효율이 떨어지는 약국',
-    '보조 인력 없이 혼자 접수부터\n행정업무까지 다 처리해야 하는 약국',
+    '당뇨 요양비 청구 건수가\n매달 꾸준히 발생하는 곳',
+    '청구 반려와 재작업 스트레스로\n업무 효율이 떨어지는 곳',
+    '보조 인력 없이 혼자 접수부터\n행정업무까지 다 처리해야 하는 곳',
     'IT에 익숙하지 않아 공인인증서나\n보안 프로그램이 항상 버거우신 분',
   ];
 
@@ -81,7 +81,7 @@ const RecommendationSection = () => {
     <Section id="추천 대상">
       <Container>
         <Title>
-          약사님들께
+          이런 분들께{' '}
           <span className="mobile-break" />
           아이당뇨를 추천합니다.
         </Title>
