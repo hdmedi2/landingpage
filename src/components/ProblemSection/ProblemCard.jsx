@@ -53,6 +53,7 @@ const Description = styled.p`
   font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.semiBold};
   color: ${props => props.theme.colors.black};
+  opacity: 0.55;
   line-height: 1.7;
   margin: 0;
   white-space: pre-line;

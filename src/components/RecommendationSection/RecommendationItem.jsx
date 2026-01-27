@@ -9,6 +9,7 @@ const Item = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+  width: 100%;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     background-color: ${props => props.theme.colors.backgroundGray};
@@ -63,7 +64,7 @@ const CheckIconSmall = styled.img`
 `;
 
 const Text = styled.p`
-  font-size: 21px;
+  font-size: 25px;
   font-weight: ${props => props.theme.fontWeights.extraBold};
   color: ${props => props.theme.colors.text};
   margin: 0;
@@ -77,7 +78,7 @@ const Text = styled.p`
     font-weight: ${props => props.theme.fontWeights.semiBold};
     line-height: 1.3;
     width: auto;
-    max-width: 190px;
+    max-width: 230px;
     flex: none;
     white-space: pre-line;
   }

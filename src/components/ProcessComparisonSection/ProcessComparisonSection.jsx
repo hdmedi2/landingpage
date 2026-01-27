@@ -35,6 +35,7 @@ const Title = styled.h2`
   color: ${props => props.theme.colors.text};
   text-align: center;
   margin: 0;
+  margin-bottom: 10px;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 23px;
@@ -47,6 +48,7 @@ const Subtitle = styled.p`
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.black};
+  opacity: 0.55;
   text-align: center;
   line-height: 1.6;
   margin-top: -40px;
@@ -73,9 +75,9 @@ const ComparisonWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 30px;
   margin-top: 50px;
-  width: 75%;
-  height: 400px;
-  max-width: 1000px;
+  width: 82%;
+  height: 440px;
+  max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
 
@@ -98,10 +100,10 @@ const OldProcessCard = styled.div`
   background-color: ${props => props.theme.colors.backgroundGray};
   border: 1px solid ${props => props.theme.colors.borderGray};
   border-radius: 21px;
-  padding: 40px 36px;
+  padding: 48px 44px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
   box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
@@ -172,10 +174,10 @@ const NewProcessCard = styled.div`
   background-color: ${props => props.theme.colors.primary};
   border: none;
   border-radius: 21px;
-  padding: 40px 36px;
+  padding: 48px 44px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 32px;
   box-shadow: 0px 13px 20px 0px ${props => props.theme.colors.shadowCardLight};
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
@@ -300,7 +302,7 @@ const StepContent = styled.div`
 
 const ProcessComparisonSection = () => {
   // 기존 방식(5단계) 카드 제목
-  const oldProcessCardTitle = '기존 방식 (8단계)';
+  const oldProcessCardTitle = '기존 방식 (5단계)';
 
   // 기존 방식(5단계) 단계 데이터
   const oldProcessSteps = [
@@ -337,7 +339,7 @@ const ProcessComparisonSection = () => {
     <Section id="비포 & 에프터">
       <Container>
         <Title>
-          복잡한 8단계를 3단계로,<br />
+          복잡한 5단계를 3단계로,<br />
           업무 시간은 80% 이상 단축됩니다.
         </Title>
         <Subtitle>

@@ -145,7 +145,7 @@ const CenterBadge = styled.div`
 `;
 
 const ProgressBarWrapper = styled.div`
-  width: 500px;
+  width: 600px;
   height: 8px;
   background-color: ${props => props.theme.colors.backgroundGrayLight};
   border-radius: 4px;

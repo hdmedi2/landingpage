@@ -93,6 +93,7 @@ const Description = styled.p`
   font-weight: ${props => props.theme.fontWeights.medium};
   line-height: 26px;
   color: ${props => props.theme.colors.text};
+  opacity: 0.55;
 
   .mobile-break {
     display: none;

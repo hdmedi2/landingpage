@@ -38,6 +38,7 @@ const Title = styled.h2`
   color: ${props => props.theme.colors.text};
   text-align: center;
   margin: 0;
+  margin-bottom: 10px;
 
   .mobile-break {
     display: none;
@@ -123,7 +124,7 @@ const SolutionSection = () => {
             청구 프로그램이 아닙니다.
           </Title>
           <Subtitle>
-            수작업 행정 구간만 정확히 제거하는
+            수작업 행정 구간만 정확히 제거하는{' '}
             <span className="mobile-break" />
             전문가용 '행정 제거 장치' 입니다.
           </Subtitle>

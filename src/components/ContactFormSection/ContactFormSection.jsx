@@ -147,7 +147,7 @@ const SubmitButton = styled.button`
   color: ${props => props.theme.colors.white};
   border: none;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   transition: background-color 0.2s;

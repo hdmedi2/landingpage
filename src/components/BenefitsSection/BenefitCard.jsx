@@ -53,7 +53,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-  font-size: 18px;
+  font-size: 17px;
   font-weight: ${props => props.theme.fontWeights.medium};
   color: ${props => props.theme.colors.textGrayDark};
   line-height: 1.7;
@@ -61,6 +61,7 @@ const Description = styled.p`
   text-align: center;
   white-space: pre-line;
   width: 100%;
+  opacity: 0.55;
 
   @media (max-width: ${props => props.theme.breakpoints.mobile}) {
     font-size: 12px;

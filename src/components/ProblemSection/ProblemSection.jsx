@@ -40,6 +40,7 @@ const Title = styled.h2`
     font-size: 22px;
     line-height: 1.35;
     margin: 0;
+    margin-bottom: 10px;
   }
 `;
 
@@ -47,6 +48,7 @@ const Subtitle = styled.p`
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.text};
+  opacity: 0.55;
   text-align: center;
   line-height: 1.6;
   margin-top: -30px;

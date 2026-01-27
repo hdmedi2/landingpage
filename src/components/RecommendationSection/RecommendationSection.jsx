@@ -56,8 +56,8 @@ const ItemsWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   margin-top: -5px;
-  width: 60%;
-  max-width: 1000px;
+  width: 70%;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 

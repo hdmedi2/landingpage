@@ -42,6 +42,7 @@ const Title = styled.h2`
   color: ${props => props.theme.colors.text};
   text-align: center;
   margin: 0;
+  margin-bottom: 10px;
 
   .mobile-break {
     display: none;
@@ -63,6 +64,7 @@ const Subtitle = styled.p`
   font-size: 20px;
   font-weight: ${props => props.theme.fontWeights.bold};
   color: ${props => props.theme.colors.black};
+  opacity: 0.55;
   text-align: center;
   line-height: 1.6;
   margin: 0;
@@ -113,7 +115,7 @@ const StatisticsSection = () => {
       <Container>
         <TitleWrapper>
           <Title>
-            이미 현장에서 수백 명이
+            이미 현장에서 수백 명이{' '}
             <span className="mobile-break" />
             증명하고 있습니다.
           </Title>
