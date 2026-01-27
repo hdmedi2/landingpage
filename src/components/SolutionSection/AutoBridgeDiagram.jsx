@@ -205,7 +205,7 @@ const StatusBadge = styled.div`
   min-width: 120px;
   white-space: nowrap;
   ${props => props.$success 
-    ? `background-color: ${props.theme.colors.successBorder}; border: 1.5px solid ${props.theme.colors.success}; color: ${props.theme.colors.success};`
+    ? `background-color: ${props.theme.colors.successBorder}; border: 1.5px solid #D7FCE3; color: ${props.theme.colors.success};`
     : `background-color: ${props.theme.colors.backgroundGrayLight}; border: 1.5px solid ${props.theme.colors.borderGray}; color: ${props.theme.colors.text};`
   }
 
