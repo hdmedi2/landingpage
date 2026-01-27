@@ -246,7 +246,7 @@ const AutoBridgeDiagram = () => {
             <NodeTitle>국민건강보험</NodeTitle>
             <NodeSubtitle>(요양기관정보마당)</NodeSubtitle>
           </NodeLabel>
-          <StatusBadge $success>접수 완료</StatusBadge>
+          <StatusBadge $success></StatusBadge>
         </Node>
       </FlowWrapper>
     </DiagramContainer>
