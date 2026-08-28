@@ -981,7 +981,7 @@ function LandingPage() {
     const digits = phoneNumber.replace(/\D/g, '');
 
     if (!companyName.trim()) {
-      setStatus({ type: 'error', message: '약국·기관명을 입력해주세요.' });
+      setStatus({ type: 'error', message: '업체명을 입력해주세요.' });
       return;
     }
     if (digits.length < 9) {
@@ -1113,8 +1113,8 @@ function LandingPage() {
             <SocialProof>400+ 약국·의료기상사가 이용하고 있습니다.</SocialProof>
             <FormCard onSubmit={handleSubmit} noValidate>
               <FieldGrid>
-                <Field>약국·기관명
-                  <input type="text" name="companyName" autoComplete="organization" placeholder="예: 행복한 약국" value={companyName} onChange={(event) => { setCompanyName(event.target.value); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />
+                <Field>업체명
+                  <input type="text" name="companyName" autoComplete="organization" placeholder="예: 아이당뇨 의료기상사" value={companyName} onChange={(event) => { setCompanyName(event.target.value); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />
                 </Field>
                 <Field>연락처
                   <input type="tel" name="phoneNumber" inputMode="numeric" autoComplete="tel" placeholder="예: 02-1234-5678" value={phoneNumber} onChange={(event) => { setPhoneNumber(formatPhone(event.target.value)); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />

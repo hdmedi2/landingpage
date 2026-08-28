@@ -24,7 +24,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://api.daeil.hdmedi.shop',
+        target: 'https://hmlife.hdmedi.kr',
         changeOrigin: true,
         secure: true,
       },

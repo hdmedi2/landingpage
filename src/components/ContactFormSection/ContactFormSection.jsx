@@ -251,13 +251,13 @@ const ContactFormSection = () => {
     e.preventDefault();
     
     console.log('=== 전송하기 버튼 클릭 ===');
-    console.log('입력된 약국명:', pharmacyName);
+    console.log('입력된 업체명:', pharmacyName);
     console.log('입력된 전화번호:', phoneNumber);
     
     // 입력값 검증
     if (!pharmacyName.trim()) {
-      console.log('❌ 검증 실패: 약국명이 비어있습니다.');
-      setError('약국명을 입력해주세요.');
+      console.log('❌ 검증 실패: 업체명이 비어있습니다.');
+      setError('업체명을 입력해주세요.');
       return;
     }
 
@@ -340,10 +340,10 @@ const ContactFormSection = () => {
           <FormWrapper>
             <InputRow>
               <InputGroup>
-                <Label>약국명</Label>
+                <Label>업체명</Label>
                 <Input
                   type="text"
-                  placeholder="예 : 행복한 약국"
+                  placeholder="예: 아이당뇨 의료기상사"
                   value={pharmacyName}
                   onChange={(e) => {
                     setPharmacyName(e.target.value);
