@@ -6,9 +6,8 @@ const API_ENDPOINT = '/api/send-lead-email';
 
 /**
  * 연락처 폼 제출 API
- * 첫 번째 도메인 실패 시 두 번째 도메인으로 자동 재시도
  * @param {string} companyName - 업체명
- * @param {string} phoneNumber - 기관 전화번호 (하이픈 포함/미포함 모두 가능)
+ * @param {string} phoneNumber - 연락처 (하이픈 포함/미포함 모두 가능)
  * @returns {Promise} API 응답
  */
 export const submitContactForm = async (companyName, phoneNumber) => {
