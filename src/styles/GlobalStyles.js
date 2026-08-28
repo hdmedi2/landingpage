@@ -27,6 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    word-break: keep-all;
   }
 
   button {
@@ -34,6 +35,10 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     border: none;
     outline: none;
+  }
+
+  :focus-visible {
+    outline-color: ${props => props.theme.colors.primary};
   }
 
   input {
