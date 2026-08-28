@@ -465,7 +465,7 @@ const ComparisonHeader = styled.h3`
   padding: 18px 26px;
   background: ${({ $after }) => ($after ? '#0069cf' : '#f1f4f8')};
   color: ${({ $after }) => ($after ? '#fff' : '#6b7683')};
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -484,7 +484,7 @@ const ComparisonList = styled.ul`
     padding: 22px 26px;
     border-bottom: 1px solid ${({ $after }) => ($after ? '#eef4fb' : '#f0f3f7')};
     color: ${({ $after }) => ($after ? '#123' : '#5b6672')};
-    font-size: 16px;
+    font-size: 18px;
     font-weight: ${({ $after }) => ($after ? 500 : 400)};
     line-height: 1.65;
     display: flex;
@@ -499,7 +499,7 @@ const ComparisonList = styled.ul`
     li {
       min-height: auto;
       padding: 18px 20px;
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 `;
