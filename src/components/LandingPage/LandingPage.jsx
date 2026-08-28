@@ -101,6 +101,7 @@ const Button = styled.a`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
   padding: 10px 20px;
   border-radius: 8px;
   background: #0069cf;
@@ -112,6 +113,13 @@ const Button = styled.a`
   &:hover {
     background: #0055a8;
     transform: translateY(-1px);
+    text-decoration: none;
+  }
+
+  &:focus,
+  &:active,
+  &:visited {
+    text-decoration: none;
   }
 
   &:focus-visible {
