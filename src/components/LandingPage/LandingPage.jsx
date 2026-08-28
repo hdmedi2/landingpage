@@ -79,6 +79,22 @@ const Brand = styled.a`
     height: 38px;
     border-radius: 9px;
   }
+
+  @media (max-width: 420px) {
+    span {
+      display: none;
+    }
+  }
+`;
+
+const HeaderActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 767px) {
+    gap: 6px;
+  }
 `;
 
 const Button = styled.a`
@@ -101,6 +117,29 @@ const Button = styled.a`
   &:focus-visible {
     outline: 3px solid rgba(0, 105, 207, 0.25);
     outline-offset: 3px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+`;
+
+const ServiceButton = styled(Button)`
+  border: 1px solid #0069cf;
+  background: #fff;
+  color: #0069cf;
+
+  &::after {
+    content: '›';
+    margin-left: 4px;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &:hover {
+    background: #f5f9ff;
+    color: #0055a8;
   }
 `;
 
@@ -961,7 +1000,12 @@ function LandingPage() {
             <img src={logoImage} alt="" />
             <span>아이당뇨</span>
           </Brand>
-          <Button href="#contact">도입 문의하기</Button>
+          <HeaderActions>
+            <Button href="#contact">도입 문의하기</Button>
+            <ServiceButton href="https://pharm.hdmedi.kr/" target="_blank" rel="noreferrer">
+              아이당뇨 서비스 바로가기
+            </ServiceButton>
+          </HeaderActions>
         </HeaderInner>
       </Header>
 
