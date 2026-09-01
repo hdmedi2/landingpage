@@ -1021,7 +1021,7 @@ function LandingPage() {
         <Hero>
           <HeroInner>
             <HeroCopy>
-              <Badge>약국 · 의료기상사를 위한 요양비 청구 업무 서비스</Badge>
+              <Badge>요양비 청구 업무를 위한 쉽고 편한 서비스</Badge>
               <Title>쉽고 편한<br /><span>요양비 청구</span></Title>
               <Description>확인부터 서류 작성, 공단 청구까지.<br />번거로운 요양비 청구 업무를 한곳에서 처리하세요.</Description>
               <Emphasis>업무는 더 간단하게, 환자 응대에 더 집중할 수 있게.</Emphasis>
@@ -1090,7 +1090,7 @@ function LandingPage() {
               <h2>이미 현장에서 사용하고 있습니다.</h2>
               <p className="label">아이당뇨 이용처</p>
               <p className="number">400+</p>
-              <p className="description">약국과 의료기상사가 아이당뇨로<br />복잡한 요양비 청구 업무를 간편하게 처리하고 있습니다.</p>
+              <p className="description">400곳 이상의 이용처가 아이당뇨로<br />복잡한 요양비 청구 업무를 간편하게 처리하고 있습니다.</p>
             </TrustCopy>
             <TrustCard>
               <ol>{trustSteps.map((step, index) => <li key={step}><span>{index + 1}</span>{step}</li>)}</ol>
@@ -1110,11 +1110,11 @@ function LandingPage() {
           <ContactContainer>
             <ContactTitle>요양비 청구에 쓰는<br />비용과 시간을 줄여보세요.</ContactTitle>
             <ContactLead>확인부터 서류 작성, 공단 청구까지.<br />쉽고 편한 아이당뇨 시작해 보세요!</ContactLead>
-            <SocialProof>400+ 약국·의료기상사가 이용하고 있습니다.</SocialProof>
+            <SocialProof>400+ 이용처가 사용하고 있습니다.</SocialProof>
             <FormCard onSubmit={handleSubmit} noValidate>
               <FieldGrid>
                 <Field>업체명
-                  <input type="text" name="companyName" autoComplete="organization" placeholder="예: 아이당뇨 의료기상사" value={companyName} onChange={(event) => { setCompanyName(event.target.value); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />
+                  <input type="text" name="companyName" autoComplete="organization" placeholder="예: 에이치디메디" value={companyName} onChange={(event) => { setCompanyName(event.target.value); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />
                 </Field>
                 <Field>연락처
                   <input type="tel" name="phoneNumber" inputMode="numeric" autoComplete="tel" placeholder="예: 02-1234-5678" value={phoneNumber} onChange={(event) => { setPhoneNumber(formatPhone(event.target.value)); setStatus({ type: 'idle', message: '' }); }} disabled={status.type === 'loading'} />
