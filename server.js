@@ -8,7 +8,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
 const port = Number(process.env.PORT || 4173);
-const recipients = ['hmlife0831@gmail.com', 'jk486730@hanmail.net'];
+const defaultRecipients = ['hmlife0831@gmail.com', 'jk486730@hanmail.net'];
+const recipients = (process.env.MAIL_RECIPIENTS || defaultRecipients.join(','))
+  .split(',')
+  .map((recipient) => recipient.trim())
+  .filter(Boolean);
 
 app.use(express.json({ limit: '20kb' }));
 
